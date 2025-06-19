@@ -161,8 +161,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <div className="registration-container">
+    <div className="min-h-screen bg-gray-100 py-8 px-4 md:px-10">
+      <div className="max-w-6xl mx-auto border border-gray-300 bg-white rounded-3xl shadow-xl p-6 md:p-10">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8 tracking-wide mt-4">
           Registration Form
         </h1>

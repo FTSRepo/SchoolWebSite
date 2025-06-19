@@ -1,97 +1,99 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/schoolImages/logo.png"
+import Logo from "../../assets/schoolImages/logo.png";
+import { FaEnvelope, FaPhoneAlt, FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="shadow md:sticky md:top-0 md:z-50">
+    <header className="w-full shadow bg-white">
       {/* Top Bar */}
-      <div className="bg-pink-700 text-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-4 text-sm md:text-base">
-
-          {/* Left: School Info */}
-          <div className="flex items-center space-x-3">
-            <span className="text-2xl">&#x1F3EB;</span>
-            <span className="font-bold uppercase tracking-wide text-lg md:text-xl">
-              Dawn Public School
-            </span>
+      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Email */}
+        <div className="flex items-center gap-4">
+          <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
+            <FaEnvelope />
           </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800">Connect With Us</h3>
+            <a href="mailto:abbasdawn6@gmail.com" className="text-gray-600 text-sm hover:text-blue-700 transition">
+              abbasdawn6@gmail.com
+            </a>
+          </div>
+        </div>
 
-          {/* Right: Contact Info + Buttons */}
-          <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6 mt-3 md:mt-0">
+        {/* Logo + Title */}
+        <div className="flex items-center gap-3 text-center">
+          <img src={Logo} alt="School Logo" className="h-16 w-auto" />
+          <div className="text-gray-900">
+            <h1 className="text-xl md:text-2xl font-bold">Dawn Public School</h1>
+            <p className="text-sm tracking-wide font-medium text-gray-600">ENGLISH MEDIUM & CO-EDUCATION</p>
+          </div>
+        </div>
 
-            <div className="flex items-center space-x-2">
-              <span className="text-xl">&#x2709;</span>
-              <span className="text-sm md:text-base">abbasdawn6@gmail.com</span>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <span className="text-xl">&#x260E;</span>
-              <span className="text-sm md:text-base">+91 9525539607</span>
-            </div>
-
-            <button className="bg-white text-pink-700 px-4 py-1.5 rounded font-medium hover:bg-gray-100 transition">
-              Login
-            </button>
-
-            <Link
-              to="/Registration"
-              className="bg-yellow-400 text-black px-4 py-1.5 rounded font-medium hover:bg-yellow-300 transition text-center"
-            >
-              Registration
-            </Link>
+        {/* Phone */}
+        <div className="flex items-center gap-4">
+          <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
+            <FaPhoneAlt />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800">Call For Inquiry</h3>
+            <a href="tel:+919525539607" className="text-gray-600 text-sm hover:text-blue-700 transition">
+              +91 9525539607
+            </a>
           </div>
         </div>
       </div>
 
-
-      {/* Main Navigation */}
-      <nav className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
-          {/* Logo Section */}
-          <div className="mb-3 md:mb-0 flex items-center">
-            <img
-              src={Logo}
-              alt="DPS Logo"
-              className="h-20 w-auto"
-            />
+      {/* Navigation */}
+      <nav className="bg-blue-600 shadow-md">
+        <div className="max-w-7xl mx-auto px-4 py-3 relative">
+          {/* Hamburger Icon */}
+          <div className="md:hidden flex justify-end">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-white text-2xl">
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
           </div>
 
-          {/* Navigation Links */}
-          <ul className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 text-sm md:text-base font-semibold text-gray-700">
-            <li>
-              <Link to="/" className="hover:text-pink-700 transition duration-200">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-pink-700 transition duration-200">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/academic" className="hover:text-pink-700 transition duration-200">
-                Academic
-              </Link>
-            </li>
-            <li>
-              <Link to="/gallery" className="hover:text-pink-700 transition duration-200">
-                Photo Gallery
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-pink-700 transition duration-200">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/branches" className="hover:text-pink-700 transition duration-200">
-                Our Branches
-              </Link>
-            </li>
-          </ul>
+          {/* Centered nav items */}
+          <div className={`w-full ${menuOpen ? "block" : "hidden"} md:flex justify-center mt-4 md:mt-0`}>
+            <ul className="flex flex-col md:flex-row md:items-center md:gap-6 gap-4 text-white font-bold uppercase text-sm md:text-base">
+              <li><Link to="/" className="hover:text-yellow-300 transition">Home</Link></li>
+
+              {/* Dropdown */}
+              <li className="relative group">
+                <span className="cursor-pointer hover:text-yellow-300 transition">About</span>
+                <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 w-[250px]">
+                  <div className="flex flex-col p-2">
+                    {[
+                      { label: "Campus Gallery", to: "/about/gallery" },
+                      { label: "About School", to: "/about/about-school" },
+                    ].map(({ label, to }) => (
+                      <Link key={label} to={to} className="block px-4 py-2 text-sm rounded hover:bg-blue-100 hover:text-blue-600 transition">
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </li>
+
+              <li><Link to="/registration" className="hover:text-yellow-300 transition">Registration</Link></li>
+              <li><Link to="/academic" className="hover:text-yellow-300 transition">Academics</Link></li>
+              <li><Link to="/gallery" className="hover:text-yellow-300 transition">Gallery</Link></li>
+              <li><Link to="/branches" className="hover:text-yellow-300 transition">Our Branches</Link></li>
+              <li><Link to="/contact" className="hover:text-yellow-300 transition">Contact</Link></li>
+
+              {/* Login Button */}
+              <li className="hidden md:block">
+                <Link to="/login" className="bg-white text-pink-700 px-4 py-1.5 rounded font-medium hover:bg-gray-100 transition">
+                  Login
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-
     </header>
   );
 };

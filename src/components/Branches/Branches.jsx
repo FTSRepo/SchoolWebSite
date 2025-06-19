@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../assets/schoolImages/Nikhil_kumar.jpg'
+import image from '../../assets/schoolImages/Rajnish_Singh.jpg'
 
 const BranchesPage = () => {
   const branches = [
