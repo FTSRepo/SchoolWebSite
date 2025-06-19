@@ -9,45 +9,45 @@ const Header = () => {
   return (
     <header className="w-full shadow bg-white">
       {/* Top Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Email */}
-        <div className="flex items-center gap-4">
-          <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
-            <FaEnvelope />
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Email */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
+              <FaEnvelope />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">Connect With Us</h3>
+              <a href="mailto:abbasdawn6@gmail.com" className="text-gray-600 text-sm hover:text-blue-700 transition">
+                abbasdawn6@gmail.com
+              </a>
+            </div>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800">Connect With Us</h3>
-            <a href="mailto:abbasdawn6@gmail.com" className="text-gray-600 text-sm hover:text-blue-700 transition">
-              abbasdawn6@gmail.com
-            </a>
-          </div>
-        </div>
 
-        {/* Logo + Title */}
-        <div className="flex items-center gap-3 text-center">
-          <img src={Logo} alt="School Logo" className="h-16 w-auto" />
-          <div className="text-gray-900">
-            <h1 className="text-xl md:text-2xl font-bold">Dawn Public School</h1>
-            <p className="text-sm tracking-wide font-medium text-gray-600">ENGLISH MEDIUM & CO-EDUCATION</p>
+          {/* Logo + Title */}
+          <div className="flex items-center gap-3 text-center">
+            <img src={Logo} alt="School Logo" className="h-16 w-auto" />
+            <div className="text-gray-900">
+              <h1 className="text-xl md:text-2xl font-bold">Dawn Public School</h1>
+              <p className="text-sm tracking-wide font-medium text-gray-600">ENGLISH MEDIUM & CO-EDUCATION</p>
+            </div>
           </div>
-        </div>
 
-        {/* Phone */}
-        <div className="flex items-center gap-4">
-          <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
-            <FaPhoneAlt />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800">Call For Inquiry</h3>
-            <a href="tel:+919525539607" className="text-gray-600 text-sm hover:text-blue-700 transition">
-              +91 9525539607
-            </a>
+          {/* Phone */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="bg-blue-600 text-white p-3 rounded-full text-xl shadow-md">
+              <FaPhoneAlt />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">Call For Inquiry</h3>
+              <a href="tel:+919525539607" className="text-gray-600 text-sm hover:text-blue-700 transition">
+                +91 9525539607
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Navigation */}
-      <nav className="bg-blue-600 shadow-md">
+      <nav className="bg-blue-950 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-3 relative">
           {/* Hamburger Icon */}
           <div className="md:hidden flex justify-end">
