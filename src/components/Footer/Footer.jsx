@@ -1,34 +1,39 @@
 import React from "react";
 import Logo from "../../assets/schoolImages/About.jpeg"
-// import "@fortawesome/fontawesome-free/css/all.min.css";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className=" bg-green-800 text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Section 1: Logo and Description */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Section 1: Logo and Contact */}
         <div>
           <div className="mb-4">
-            <img src={Logo} alt="DPS" className="w-24 h-24 rounded-md" />
+            <img src={Logo} alt="DPS" className="w-24 h-24 rounded-md shadow-lg" />
           </div>
-
-          <div className="text-sm leading-6 space-y-2">
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-location-crosshairs text-yellow-400 mt-1"></i>
-              <span>Behind V.Mart Janpul Road, Motihari, East Champaran</span>
+          <h3 className="text-xl font-bold mb-4 uppercase">Contact Us</h3>
+          <div className="text-sm text-gray-200 space-y-4">
+            <div className="flex items-start gap-3">
+              <FaMapMarkerAlt className="text-xl mt-1 text-yellow-400" />
+              <p>
+                Behind V.Mart Janpul Road,<br />
+                Motihari, East Champaran
+              </p>
             </div>
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-square-envelope text-yellow-400 mt-1"></i>
-              <span>abbassdown6@gmail.com</span>
+            <div className="flex items-center gap-3 border-t border-gray-500 pt-4">
+              <FaPhoneAlt className="text-yellow-400" />
+              <a href="tel:+919525539607" className="hover:underline">+91 9525539607</a>
             </div>
-            <div className="flex items-start gap-2">
-              <i className="fa-solid fa-mobile-retro text-yellow-400 mt-1"></i>
-              <span>+91 9525539607</span>
+            <div className="flex items-center gap-3 border-t border-gray-500 pt-4">
+              <FaEnvelope className="text-yellow-400" />
+              <a href="mailto:abbassdown6@gmail.com" className="hover:underline">abbassdown6@gmail.com</a>
             </div>
           </div>
         </div>
-
-
 
         {/* Section 2: Useful Links */}
         <div>

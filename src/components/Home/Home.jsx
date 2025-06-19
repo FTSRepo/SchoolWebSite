@@ -70,7 +70,7 @@ export default function Home() {
               </p>
               <div>
                 <Link
-                  to="/About"
+                  to="/about/about-school"
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200"
                 >
                   Read More About Us
@@ -227,7 +227,7 @@ export default function Home() {
           {/* View Full Gallery Button */}
           <div className="mt-12">
             <a
-              href="/Photo"
+              href="/gallery"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200"
             >
               View Full Gallery
