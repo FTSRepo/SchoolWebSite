@@ -51,6 +51,7 @@ const RegistrationForm = () => {
   // 2. API Endpoint (Replace with your actual API endpoint)
 
   const API_ENDPOINT = 'https://schoolapi.friensys.com:443/api/SaveRegistrationWeb'
+  // https://schoolapi.friensys.com:443/api/SaveRegistrationWeb
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,7 +81,7 @@ const RegistrationForm = () => {
       state,
       city,
       pinCode,
-      SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null, // Convert distance to number if exists
+      SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null, 
       RegStatus,
       ApplicationMode,
       RegFee,

@@ -14,7 +14,7 @@ const ReceiptPage = () => {
   const fileName = "Registration" + regNumber + ".pdf";
 
   const handleButtonClick = async () => {
-    const apiUrl = '/api/printRegistrationslip';
+    const apiUrl = 'https://devexamapi.friensys.com/api/printRegistrationslip';
     const payload = {
       schoolId,
       regNo,
