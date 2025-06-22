@@ -21,16 +21,15 @@ const router = createBrowserRouter(
             <Route path='/' element={<Layout />}>
                 <Route path='' element={<Home />} />
                 {/* About Route with nested pages */}
-                <Route path="about" element={<About />}>
+                <Route path="/about" element={<About />}>
                     <Route path="about-school" element={<AboutSchool />} />
-                    <Route path="gallery" element={<Navigate to="/gallery" replace />} />
+                    <Route path="gallery" element={<Gallery />} />
                 </Route>
                 <Route path='/academic' element={<Academic />} />
                 <Route path='/gallery' element={<Gallery />} />
-                <Route path='contact' element={<Contact />} />
-                <Route path='branches' element={<Branches />} />
-                <Route path='payment' element={<Payment />} />
-                <Route path='registration' element={<Registration />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/branches' element={<Branches />} />
+                <Route path='/registration' element={<Registration />} />
             </Route>
 
             {/* Route without Layout (No Header/Footer) */}

@@ -105,7 +105,9 @@ const Gallery = () => {
             <div className="p-4 text-center">
               <h3 className="text-xl font-semibold capitalize">{lightboxImage.tag}</h3>
             </div>
-            <button className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl" onClick={() => navigateLightboxImage("prev")}>&#10094;</button>
+            <button
+             className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl" 
+             onClick={() => navigateLightboxImage("prev")}>&#10094;</button>
             <button className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-4xl" onClick={() => navigateLightboxImage("next")}>&#10095;</button>
           </div>
         </div>
