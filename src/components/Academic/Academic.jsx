@@ -1,4 +1,3 @@
-import images from "../../assets/schoolImages/D1.jpg"
 import Holiday from '../Holiday/Holiday'
 import image from '../../../src/Common/BindImages/BindImages';
 
@@ -24,52 +23,13 @@ const AcademicContent = () => {
     'Sanskrit / Regional Language',
     'Life Skills & Personality Development'
   ];
-
-  const seniorSubjects = {
-    science: [
-      'Physics',
-      'Chemistry',
-      'Biology',
-      'Mathematics / Computer Science',
-      'English Core',
-      'Physical Education / Optional Subjects'
-    ],
-    commerce: [
-      'Accountancy',
-      'Business Studies',
-      'Economics',
-      'Mathematics / Informatics Practices',
-      'English Core',
-      'Physical Education / Optional Subjects'
-    ],
-    humanities: [
-      'History',
-      'Political Science',
-      'Economics',
-      'Geography / Psychology / Sociology',
-      'English Core',
-      'Physical Education / Optional Subjects'
-    ]
-  };
-
-  const academicCalendar = [
-    { month: 'April', event: 'New Academic Session Begins' },
-    { month: 'May', event: 'Summer Vacation Begins' },
-    { month: 'June', event: 'Summer Vacation Ends, School Reopens' },
-    { month: 'August', event: 'Independence Day (Holiday)' },
-    { month: 'October', event: 'Dussehra Holidays, Mid-Term Exams' },
-    { month: 'November', event: 'Diwali Holidays' },
-    { month: 'December', event: 'Winter Break Begins' },
-    { month: 'January', event: 'Winter Break Ends, Republic Day (Holiday)' },
-    { month: 'March', event: 'Annual Exams, Holi (Holiday)' },
-  ];
-
+  
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <section
         className="h-[500px] bg-cover bg-center flex items-center justify-center text-white text-center"
-        style={{ backgroundImage: `url(${images})` }}
+        style={{ backgroundImage: `url(${image.academicBackground})` }}
       >
         <div className="bg-black bg-opacity-60 p-8 rounded-xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Igniting Young Minds for a Bright Future</h1>
@@ -89,7 +49,7 @@ const AcademicContent = () => {
             {/* Primary Grades */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row transform transition duration-300 hover:shadow-xl hover:scale-105">
               <div className="md:w-1/2 h-96 md:h-auto">
-                <img src={images} alt="Primary Education" className="w-full h-full object-cover" />
+                <img src={image.primaryGrades} alt="Primary Education" className="w-full h-full object-cover" />
               </div>
               <div className="p-8 md:w-1/2 flex flex-col justify-between">
                 <div>
@@ -107,7 +67,7 @@ const AcademicContent = () => {
             {/* Middle Grades */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row-reverse transform transition duration-300 hover:shadow-xl hover:scale-105">
               <div className="md:w-1/2 h-96 md:h-auto">
-                <img src={images} alt="Middle Education" className="w-full h-full object-cover" />
+                <img src={image.middleGrades} alt="Middle Education" className="w-full h-full object-cover" />
               </div>
               <div className="p-8 md:w-1/2 flex flex-col justify-between">
                 <div>
@@ -125,7 +85,7 @@ const AcademicContent = () => {
             {/* Senior Grades */}
             <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row transform transition duration-300 hover:shadow-xl hover:scale-105">
               <div className="md:w-1/2 h-96 md:h-auto">
-                <img src={image.science_lab} alt="Senior Education" className="w-full h-full object-cover" />
+                <img src={image.seniorGrades} alt="Senior Education" className="w-full h-full object-cover" />
               </div>
               <div className="p-8 md:w-1/2 flex flex-col justify-between">
                 <div>
@@ -145,25 +105,25 @@ const AcademicContent = () => {
       </section>
 
       {/* Co-curricular Activities */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-pink-100 ">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">Beyond Books: Nurturing Talents</h2>
+          <h2 className="text-4xl font-bold text-center text-black mb-12">Beyond Books: Nurturing Talents</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <div className="bg-gray-50 p-6 rounded-xl shadow transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
-              <img src={images} alt="Sports" className="w-full h-52 object-cover rounded-md mb-4" />
+              <img src={image.academicSports} alt="Sports" className="w-full h-52 object-cover rounded-md mb-4" />
               <h3 className="text-xl font-semibold mb-2">Sports & Athletics</h3>
               <p>Football, Basketball, Cricket, Yoga – promoting fitness & team spirit.</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl shadow transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
-              <img src={images} alt="Arts" className="w-full h-52 object-cover rounded-md mb-4" />
+              <img src={image.creativePerformingArts} alt="Arts" className="w-full h-52 object-cover rounded-md mb-4" />
               <h3 className="text-xl font-semibold mb-2">Creative & Performing Arts</h3>
               <p>Music, Dance, Drama, Fine Arts, Debate – fostering creativity.</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl shadow transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
-              <img src={images} alt="Clubs" className="w-full h-52 object-cover rounded-md mb-4" />
+              <img src={image.clubOutreach} alt="Clubs" className="w-full h-52 object-cover rounded-md mb-4" />
               <h3 className="text-xl font-semibold mb-2">Clubs & Outreach</h3>
               <p>Science Club, Eco Club, Community Service – igniting passions & responsibility.</p>
             </div>
@@ -178,22 +138,22 @@ const AcademicContent = () => {
           <h2 className="text-4xl font-bold text-center mb-12">Modern Facilities for Enhanced Learning</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-xl shadow">
-              <img src={image.science_lab} alt="Science Labs" className="h-40 w-full object-cover rounded-md mb-4" />
+              <img src={image.academicScienceLab} alt="Science Labs" className="h-40 w-full object-cover rounded-md mb-4" />
               <h3 className="text-lg font-semibold mb-1">Advanced Science Labs</h3>
               <p>Hands-on experiments in Physics, Chemistry & Biology.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow">
-              <img src={image.library} alt="Library" className="h-40 w-full object-cover rounded-md mb-4" />
+              <img src={image.academicLibrary} alt="Library" className="h-40 w-full object-cover rounded-md mb-4" />
               <h3 className="text-lg font-semibold mb-1">Interactive Digital Library</h3>
               <p>Books, e-resources & reading spaces.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow">
-              <img src={image.computer_lab} alt="Computer Lab" className="h-40 w-full object-cover rounded-md mb-4" />
+              <img src={image.academicComputerLab} alt="Computer Lab" className="h-40 w-full object-cover rounded-md mb-4" />
               <h3 className="text-lg font-semibold mb-1">Smart Computer Labs</h3>
               <p>Modern software, coding platforms & high-speed internet.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow">
-              <img src={image.playground} alt="Sports Complex" className="h-40 w-full object-cover rounded-md mb-4" />
+              <img src={image.academicPlayground} alt="Sports Complex" className="h-40 w-full object-cover rounded-md mb-4" />
               <h3 className="text-lg font-semibold mb-1">Spacious Sports Complex</h3>
               <p>Outdoor grounds & indoor multipurpose courts.</p>
             </div>

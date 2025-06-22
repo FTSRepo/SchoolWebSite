@@ -3,7 +3,9 @@
 import React, { useState } from 'react'; // useState hook import karein
 
 const AcademicContent = () => {
-  // ... (primarySubjects, middleSubjects, seniorSubjects - ye sab pehle jaisa hi rahega)
+
+  // State to manage visible calendar events
+  const [showAllEvents, setShowAllEvents] = useState(false);
 
   const academicCalendar = [
     { month: 'May', event: 'Summer Vacation Begins', type: 'holiday' },
@@ -27,9 +29,6 @@ const AcademicContent = () => {
 
   // Current month ko dynamically get karne ke liye
   const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
-
-  // State to manage visible calendar events
-  const [showAllEvents, setShowAllEvents] = useState(false);
 
   // Filter events for the current month
   const currentMonthEvents = academicCalendar.filter(item => item.month === currentMonth);
@@ -59,10 +58,10 @@ const AcademicContent = () => {
               <div
                 key={index}
                 className={`p-6 rounded-lg shadow-md transition-transform transform hover:scale-105 bg-white border-l-4 ${item.type === 'holiday'
-                    ? 'border-red-400'
-                    : item.type === 'exam'
-                      ? 'border-yellow-400'
-                      : 'border-blue-400'
+                  ? 'border-red-400'
+                  : item.type === 'exam'
+                    ? 'border-yellow-400'
+                    : 'border-blue-400'
                   }`}
               >
                 <div className="text-sm text-gray-500 mb-1">{item.month}</div>

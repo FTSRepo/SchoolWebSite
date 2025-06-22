@@ -86,7 +86,7 @@ const Header = () => {
 
               {/* Login Button */}
               <li className="hidden md:block">
-                <Link to="/login" className="bg-white text-pink-700 px-4 py-1.5 rounded font-medium hover:bg-gray-100 transition">
+                <Link to="https://school.friensys.com/" className="bg-white text-pink-700 px-4 py-1.5 rounded font-medium hover:bg-gray-100 transition">
                   Login
                 </Link>
               </li>
