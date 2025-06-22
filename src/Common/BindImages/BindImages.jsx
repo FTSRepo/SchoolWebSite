@@ -12,8 +12,6 @@ import about from '../../assets/schoolImages/Home/about.jpg'
 import smartClassroom from '../../assets/schoolImages/About/smartClassroom.jpg'
 import scienceExhibition from '../../assets/schoolImages/About/scienceExhibition.jpg'
 import extraActivity from '../../assets/schoolImages/About/extraActivity.jpg'
-// import sportsDay from '../../assets/schoolImages/sportsDay.jpg'
-// import republicDay from '../../assets/schoolImages/republicDay.jpg';
 import dynamic from '../../assets/schoolImages/About/Dynamic.jpg';
 import artFacilities from '../../assets/schoolImages/About/artFacilities.png';
 import coCurricular from '../../assets/schoolImages/About/coCurricular.jpg';
@@ -39,14 +37,11 @@ const images = {
   creativePerformingArts,
   primaryGrades,
   middleGrades,
-  middleGrades,
   seniorGrades,
   about,
   smartClassroom,
   scienceExhibition,
   extraActivity,
-  // sportsDay,
-  // republicDay,
   dynamic,
   artFacilities,
   coCurricular,
