@@ -26,6 +26,9 @@ import academicScienceLab from '../../assets/schoolImages/Academic/scienceLab.jp
 import academicComputerLab from '../../assets/schoolImages/Academic/computerLab.jpg'
 import academicPlayground from '../../assets/schoolImages/Academic/Playground.jpg'
 import academicBackground from '../../assets/schoolImages/Academic/academicBackground.jpg'
+import dpsPrinciple from "../../assets/schoolImages/DpsPrinciple.jpg"
+import belaPrinciple from "../../assets/schoolImages/BelaPrinc.jpg"
+import dummyPic from "../../assets/schoolImages/dummy.jpg"
 
 const images = {
   scienceLab,
@@ -55,7 +58,10 @@ const images = {
   academicLibrary,
   academicComputerLab,
   academicPlayground,
-  academicBackground
+  academicBackground,
+  dpsPrinciple,
+  belaPrinciple,
+  dummyPic
 };
 
 export default images;

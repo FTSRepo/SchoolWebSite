@@ -35,8 +35,6 @@ const router = createBrowserRouter(
             {/* Route without Layout (No Header/Footer) */}
             < Route path="/payment" element={< Payment />} />
             < Route path="/receiving" element={< Receipt />} />
-
-
         </>
     )
 )

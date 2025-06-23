@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { GetHomeImagesAPI } from "../../http/server-apis";
 import { Link } from 'react-router-dom';
 import images from '../../Common/BindImages/BindImages';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 
 export default function Home() {
@@ -38,7 +42,7 @@ export default function Home() {
     GetHomeImagesAPI("galary", schoolId)
       .then((res) => {
         const fullGallery = res.data?.data || [];
-        const mainGallery = fullGallery[1]?.imageList || [];
+        const mainGallery = fullGallery[0]?.imageList || [];
         setGalleryImages(mainGallery);
       })
       .catch((err) => {
@@ -50,7 +54,7 @@ export default function Home() {
       .then((res) => {
         const fullNews = res.data?.data || [];
         setNewsEvent(fullNews);
-        if (fullNews.length > 0) setSelectedTag(fullNews[0].tag); // Default select first tag
+        if (fullNews.length > 0) setSelectedTag(fullNews[0].tag);
       })
       .catch((err) => {
         console.error("Failed to load News and event images:", err);
@@ -394,8 +398,8 @@ export default function Home() {
                 key={idx}
                 onClick={() => setSelectedTag(item.tag)}
                 className={`px-5 py-2 rounded-full text-sm font-medium border transition duration-300 ${selectedTag === item.tag
-                  ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                  : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                    : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
                   }`}
               >
                 {item.tag}
@@ -403,26 +407,40 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Filtered Images Based on Selected Tag */}
+          {/* Swiper Carousel for Selected Tag */}
           {newsEvent
             .filter((item) => item.tag === selectedTag)
             .map((section, index) => (
-              <div key={index}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {section.imageList.map((imgUrl, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white border rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden"
-                    >
+              <Swiper
+                key={index}
+                spaceBetween={20}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }}
+                modules={[Autoplay, Pagination]}
+                className="mySwiper"
+              >
+                {section.imageList.map((imgUrl, idx) => (
+                  <SwiperSlide key={idx}>
+                    <div className="bg-white border rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden">
                       <img
                         src={imgUrl}
                         alt={`Event ${idx + 1}`}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-64 object-cover"
                       />
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             ))}
         </div>
       </section>
