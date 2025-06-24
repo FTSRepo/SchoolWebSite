@@ -13,7 +13,8 @@ export default function Home() {
   const [headerImages, setHeaderImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [principalImg, setPrincipalImg] = useState(null);
-  const [accountantImg, setAccountantImg] = useState(null);
+  const [directorImg, setDirectorImg] = useState(null);
+  const [administratorImg , setAdministratorImg] = useState(null);
   const [galleryImages, setGalleryImages] = useState([]);
   const [newsEvent, setNewsEvent] = useState([]);
   const [popupImg, setPopupImg] = useState(null);
@@ -30,7 +31,8 @@ export default function Home() {
         const data = res.data?.data || {};
         setHeaderImages(data.headerImages || []);
         setPrincipalImg(data.principalImg || "");
-        setAccountantImg(data.accountantImg || "");
+        setDirectorImg(data.directorImg || "");
+        setAdministratorImg(data.administratorImg || "");
 
       })
       .catch((err) => {
@@ -353,12 +355,12 @@ export default function Home() {
             {/* Card 2 - Accountant */}
             <div className="bg-white text-gray-800 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform">
               <img
-                src={accountantImg}
-                alt="Accountant"
+                src={directorImg}
+                alt="Director"
                 className="w-full h-[300px] object-cover rounded mx-auto mb-4"
               />
               <h3 className="text-xl font-bold mb-2">Mrs Farah Khan</h3>
-              <p className="text-sm font-medium text-orange-700 mb-2">Accountant</p>
+              <p className="text-sm font-medium text-orange-700 mb-2">Director</p>
               <p className="text-sm mb-4">
                 “Transparency and trust are at the heart of our financial operations.
                 We ensure every resource is used to enrich our students’ experience.”
@@ -368,12 +370,12 @@ export default function Home() {
             {/* Card 3 - Manager */}
             <div className="bg-white text-gray-800 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform">
               <img
-                src={principalImg}
-                alt="Manager"
+                src={administratorImg}
+                alt="Administrator"
                 className="w-full h-[300px] object-cover rounded mx-auto mb-4"
               />
               <h3 className="text-xl font-bold mb-2">Mr Ravi Verma</h3>
-              <p className="text-sm font-medium text-orange-700 mb-2">Manager</p>
+              <p className="text-sm font-medium text-orange-700 mb-2">Administrator</p>
               <p className="text-sm mb-4">
                 “From operations to facilities, we strive to create a safe, efficient,
                 and nurturing learning environment for every student and staff
