@@ -43,6 +43,13 @@ const Gallery = () => {
     setLightboxImage(filteredImages[nextIndex]);
   };
 
+
+  const stripHtmlTags = (str) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = str;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
+
   return (
     <div className="bg-white py-16 px-6">
       <section className="max-w-7xl mx-auto text-center">
@@ -63,7 +70,7 @@ const Gallery = () => {
               className={`capitalize px-4 py-2 rounded-full font-medium border transition ${activeCategory === item.tag ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border-gray-300'}`}
               onClick={() => setActiveCategory(item.tag)}
             >
-              {item.tag}
+              {stripHtmlTags(item.tag)}
             </button>
           ))}
         </div>
@@ -106,8 +113,8 @@ const Gallery = () => {
               <h3 className="text-xl font-semibold capitalize">{lightboxImage.tag}</h3>
             </div>
             <button
-             className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl" 
-             onClick={() => navigateLightboxImage("prev")}>&#10094;</button>
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl"
+              onClick={() => navigateLightboxImage("prev")}>&#10094;</button>
             <button className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-4xl" onClick={() => navigateLightboxImage("next")}>&#10095;</button>
           </div>
         </div>

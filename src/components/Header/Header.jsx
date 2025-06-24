@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full shadow bg-white">
+    <header className="w-full shadow bg-white sticky top-0 z-50">
       {/* Top Bar */}
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Email */}

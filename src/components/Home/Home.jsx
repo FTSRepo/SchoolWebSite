@@ -14,7 +14,7 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [principalImg, setPrincipalImg] = useState(null);
   const [directorImg, setDirectorImg] = useState(null);
-  const [administratorImg , setAdministratorImg] = useState(null);
+  const [administratorImg, setAdministratorImg] = useState(null);
   const [galleryImages, setGalleryImages] = useState([]);
   const [newsEvent, setNewsEvent] = useState([]);
   const [popupImg, setPopupImg] = useState(null);
@@ -44,7 +44,7 @@ export default function Home() {
     GetHomeImagesAPI("galary", schoolId)
       .then((res) => {
         const fullGallery = res.data?.data || [];
-        const mainGallery = fullGallery[0]?.imageList || [];
+        const mainGallery = fullGallery.flatMap(item => item.imageList) || [];
         setGalleryImages(mainGallery);
       })
       .catch((err) => {
@@ -209,38 +209,56 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center text-black">
           <h2 className="text-3xl font-bold mb-10">Photo Gallery</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {galleryImages.length > 0 ? (
-              galleryImages.slice(0, 8).map((url, idx) => (
-                <div
-                  key={idx}
-                  className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                  onClick={() => setPopupImg(url)}
-                >
-                  <img
-                    src={url}
-                    alt={`Gallery ${idx + 1}`}
-                    className="w-full h-60 object-cover transform group-hover:scale-105 transition duration-500"
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-10 w-10 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553 2.276A1 1 0 0120 13.118v3.764a1 1 0 01-1.447.894L15 16M4 6h16M4 10h16M4 14h16M4 18h16" />
-                    </svg>
+          {galleryImages.length > 0 ? (
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              loop={true}
+              className="pb-10"
+            >
+              {galleryImages.map((url, idx) => (
+                <SwiperSlide key={idx}>
+                  <div
+                    className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
+                    onClick={() => setPopupImg(url)}
+                  >
+                    <img
+                      src={url}
+                      alt={`Gallery ${idx + 1}`}
+                      className="w-full h-60 object-cover transform group-hover:scale-105 transition duration-500"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-10 w-10 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 10l4.553 2.276A1 1 0 0120 13.118v3.764a1 1 0 01-1.447.894L15 16M4 6h16M4 10h16M4 14h16M4 18h16"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              ))
-            ) : (
-              <p className="col-span-full text-gray-500">Loading gallery...</p>
-            )}
-          </div>
-
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <p className="text-gray-500">Loading gallery...</p>
+          )}
           <div className="mt-12">
             <Link
               to="/gallery"
@@ -251,6 +269,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* POPUP MODAL FOR GALLERY */}
       {popupImg && (
@@ -400,8 +419,8 @@ export default function Home() {
                 key={idx}
                 onClick={() => setSelectedTag(item.tag)}
                 className={`px-5 py-2 rounded-full text-sm font-medium border transition duration-300 ${selectedTag === item.tag
-                    ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                    : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
+                  ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                  : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
                   }`}
               >
                 {item.tag}
