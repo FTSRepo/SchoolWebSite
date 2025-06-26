@@ -90,7 +90,7 @@ const Gallery = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                <h4 className="text-lg font-semibold capitalize">{image.tag}</h4>
+                <h4 className="text-lg font-semibold capitalize">{stripHtmlTags(image.tag)}</h4>
               </div>
             </div>
           ))}
@@ -110,7 +110,7 @@ const Gallery = () => {
               className="w-full max-h-[70vh] object-contain"
             />
             <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold capitalize">{lightboxImage.tag}</h3>
+              <h3 className="text-xl font-semibold capitalize">{stripHtmlTags(lightboxImage.tag)}</h3>
             </div>
             <button
               className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-4xl"

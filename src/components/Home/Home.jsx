@@ -72,6 +72,13 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [headerImages]);
 
+  {/*Removing the html in the latest news and event section */}
+  const stripHtmlTags = (str) => {
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = str;
+  return tempDiv.textContent || tempDiv.innerText || "";
+};
+
   return (
     <div>
       {/* HERO SECTION */}
@@ -406,65 +413,67 @@ export default function Home() {
       </section>
 
       {/* NEWS AND EVENT SECTION */}
-      <section className="py-20 px-4 md:px-8 bg-slate-300">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-            Latest News & Events
-          </h2>
+      {newsEvent.some(item => item.tag === selectedTag && item.imageList.length > 0) && (
+        <section className="py-20 px-4 md:px-8 bg-slate-300">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+              Latest News & Events
+            </h2>
 
-          {/* Tag Selection Tiles */}
-          <div className="flex flex-wrap gap-4 justify-center mb-10">
-            {newsEvent.map((item, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedTag(item.tag)}
-                className={`px-5 py-2 rounded-full text-sm font-medium border transition duration-300 ${selectedTag === item.tag
-                  ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                  : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
-                  }`}
-              >
-                {item.tag}
-              </button>
-            ))}
+            {/* Tag Selection Tiles */}
+            <div className="flex flex-wrap gap-4 justify-center mb-10">
+              {newsEvent.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedTag(item.tag)}
+                  className={`px-5 py-2 rounded-full text-sm font-medium border transition duration-300 ${selectedTag === item.tag
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+                    : 'bg-white text-gray-700 border-gray-300 hover:bg-blue-100'
+                    }`}
+                >
+                  {stripHtmlTags(item.tag)}
+                </button>
+              ))}
+            </div>
+
+            {/* Swiper Carousel for Selected Tag */}
+            {newsEvent
+              .filter(item => item.tag === selectedTag && item.imageList.length > 0)
+              .map((section, index) => (
+                <Swiper
+                  key={index}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  breakpoints={{
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                  }}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{ clickable: true }}
+                  modules={[Autoplay, Pagination]}
+                  className="mySwiper"
+                >
+                  {section.imageList.map((imgUrl, idx) => (
+                    <SwiperSlide key={idx}>
+                      <div className="bg-white border rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden">
+                        <img
+                          src={imgUrl}
+                          alt={`Event ${idx + 1}`}
+                          className="w-full h-64 object-cover"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ))}
           </div>
-
-          {/* Swiper Carousel for Selected Tag */}
-          {newsEvent
-            .filter((item) => item.tag === selectedTag)
-            .map((section, index) => (
-              <Swiper
-                key={index}
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                  640: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={{ clickable: true }}
-                modules={[Autoplay, Pagination]}
-                className="mySwiper"
-              >
-                {section.imageList.map((imgUrl, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div className="bg-white border rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 overflow-hidden">
-                      <img
-                        src={imgUrl}
-                        alt={`Event ${idx + 1}`}
-                        className="w-full h-64 object-cover"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ))}
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ADMISSION CALL SECTION */}
       <section className="py-20 bg-blue-50">
