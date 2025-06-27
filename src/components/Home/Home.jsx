@@ -52,6 +52,7 @@ export default function Home() {
       });
 
     {/* LATEST NEWS AND EVENTS */ }
+
     GetHomeImagesAPI("newsandevent", schoolId)
       .then((res) => {
         const fullNews = res.data?.data || [];
@@ -276,7 +277,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* POPUP MODAL FOR GALLERY */}
       {popupImg && (

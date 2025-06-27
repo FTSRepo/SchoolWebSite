@@ -7,8 +7,9 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full shadow bg-white sticky top-0 z-50">
-      {/* Top Bar */}
+    <>
+      <header className="w-full shadow bg-white ">
+        {/* Top Bar */}
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Email */}
           <div className="hidden md:flex items-center gap-4">
@@ -46,8 +47,10 @@ const Header = () => {
           </div>
         </div>
 
-      {/* Navigation */}
-      <nav className="bg-blue-950 shadow-md">
+        {/* Navigation */}
+
+      </header>
+      <nav className="bg-blue-950 shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 relative">
           {/* Hamburger Icon */}
           <div className="md:hidden flex justify-end">
@@ -94,7 +97,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </header>
+    </>
   );
 };
 

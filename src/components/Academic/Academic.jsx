@@ -1,5 +1,6 @@
 import Holiday from '../Holiday/Holiday'
 import image from '../../../src/Common/BindImages/BindImages';
+import { Link } from 'react-router-dom';
 
 const AcademicContent = () => {
   const primarySubjects = [
@@ -169,7 +170,7 @@ const AcademicContent = () => {
         <h2 className="text-4xl font-bold mb-4">Join Our School Community!</h2>
         <p className="text-lg mb-8">Admissions open for the upcoming academic year. Discover how we nurture potential.</p>
         <div className="flex justify-center gap-6">
-          <a href="#" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Apply for Admission</a>
+          <Link to="/registration" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Apply for Admission</Link>
           <a href="#" className="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-full hover:bg-blue-50">Download Prospectus</a>
         </div>
       </section>

@@ -211,7 +211,16 @@ const RegistrationForm = () => {
                   <option value="Nursery">Nursery</option>
                   <option value="LKG">LKG</option>
                   <option value="UKG">UKG</option>
-                  <option value="Class 1">Class 1</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                  <option value="fifth">Fifth</option>
+                  <option value="six">Six</option>
+                  <option value="seven">Seven</option>
+                  <option value="eight">Eight</option>
+                  <option value="nine">Nine</option>
+                  <option value="ten">Ten</option>
                 </select>
               </div>
 
@@ -316,8 +325,16 @@ const RegistrationForm = () => {
                   <option value="Nursery">Nursery</option>
                   <option value="LKG">LKG</option>
                   <option value="UKG">UKG</option>
-                  <option value="Class 1">Class 1</option>
-                  <option value="Not Applicable">Not Applicable</option>
+                  <option value="first">First</option>
+                  <option value="second">Second</option>
+                  <option value="third">Third</option>
+                  <option value="fourth">Fourth</option>
+                  <option value="fifth">Fifth</option>
+                  <option value="six">Six</option>
+                  <option value="seven">Seven</option>
+                  <option value="eight">Eight</option>
+                  <option value="nine">Nine</option>
+                  <option value="ten">Ten</option>
                 </select>
               </div>
 
@@ -441,8 +458,6 @@ const RegistrationForm = () => {
                 >
                   <option value="">Select your Country</option>
                   <option value="India">India</option>
-                  <option value="USA">USA</option>
-                  <option value="Canada">Canada</option>
                 </select>
               </div>
 
@@ -456,10 +471,11 @@ const RegistrationForm = () => {
                   className="border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 >
                   <option value="">Select your State</option>
-                  <option value="Uttar Pradesh">Uttar Pradesh</option>
-                  <option value="Maharashtra">Maharashtra</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Karnataka">Karnataka</option>
+                  <option value="bihar">Bihar</option>
+                  <option value="uttarpradesh">Uttar Pradesh</option>
+                  <option value="maharashtra">Maharashtra</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="karnataka">Karnataka</option>
                 </select>
               </div>
 
