@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaYoutube,
-  FaFacebook ,
+  FaFacebook,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -80,7 +80,7 @@ const Footer = () => {
               <p>
                 Behind V.Mart  <br />
                 Janpul road motihari<br />
-               East Champaran
+                East Champaran
               </p>
             </div>
             <div className="flex items-center gap-3 border-t border-gray-400 pt-4">
@@ -92,6 +92,15 @@ const Footer = () => {
               <a href="mailto:abbasdawn6@gmail.com" className="hover:underline">
                 abbassdown6@gmail.com
               </a>
+            </div>
+            <div className="flex items-center gap-3 border-t border-gray-400 pt-4">
+              <a href="mailto:abbasdawn6@gmail.com" className="hover:underline">
+                Privacy Policy
+              </a>
+              <a href="mailto:abbasdawn6@gmail.com" className="hover:underline">
+                Cancellation Policy
+              </a>
+              
             </div>
           </div>
         </div>

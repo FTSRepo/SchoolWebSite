@@ -73,12 +73,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [headerImages]);
 
-  {/*Removing the html in the latest news and event section */}
+  {/*Removing the html in the latest news and event section */ }
   const stripHtmlTags = (str) => {
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = str;
-  return tempDiv.textContent || tempDiv.innerText || "";
-};
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = str;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
 
   return (
     <div>
@@ -486,18 +486,18 @@ export default function Home() {
             Enroll your child today and unlock their full potential.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="/Registration"
+            <Link
+              to="/Registration"
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200"
             >
               Apply for Admission
-            </a>
-            <a
-              href="/Contact"
+            </Link>
+            <Link
+              to="/Contact"
               className="bg-white text-blue-600 border border-blue-600 hover:bg-blue-50 font-medium py-3 px-6 rounded-lg transition duration-200"
             >
               Schedule a Visit
-            </a>
+            </Link>
           </div>
         </div>
       </section>

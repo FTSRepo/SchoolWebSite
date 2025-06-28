@@ -81,7 +81,7 @@ const RegistrationForm = () => {
       state,
       city,
       pinCode,
-      SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null, 
+      SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null,
       RegStatus,
       ApplicationMode,
       RegFee,
@@ -174,7 +174,10 @@ const RegistrationForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
               <div className="flex flex-col">
-                <label htmlFor="Name" className="font-medium text-sm text-gray-700 mb-1">Student Name *</label>
+                <label htmlFor="Name" className="font-medium text-sm text-gray-700 mb-1">
+                  Student Name
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="Name"
@@ -187,7 +190,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Dob" className="font-medium text-sm text-gray-700 mb-1">Date of Birth *</label>
+                <label htmlFor="Dob" className="font-medium text-sm text-gray-700 mb-1">
+                  Date of Birth
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="date"
                   id="Dob"
@@ -199,7 +205,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Class" className="font-medium text-sm text-gray-700 mb-1">Admission Class *</label>
+                <label htmlFor="Class" className="font-medium text-sm text-gray-700 mb-1">
+                  Admission Class
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="Class"
                   value={Class}
@@ -225,7 +234,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Gender" className="font-medium text-sm text-gray-700 mb-1">Gender *</label>
+                <label htmlFor="Gender" className="font-medium text-sm text-gray-700 mb-1">
+                  Gender
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="Gender"
                   value={Gender}
@@ -241,7 +253,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="BloodGroup" className="font-medium text-sm text-gray-700 mb-1">Blood Group *</label>
+                <label htmlFor="BloodGroup" className="font-medium text-sm text-gray-700 mb-1">
+                  Blood Group
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="BloodGroup"
                   value={BloodGroup}
@@ -262,7 +277,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Religion" className="font-medium text-sm text-gray-700 mb-1">Religion *</label>
+                <label htmlFor="Religion" className="font-medium text-sm text-gray-700 mb-1">
+                  Religion '
+                  <span className="text-red-500">*</span>'
+                </label>
                 <select
                   id="Religion"
                   value={Religion}
@@ -282,7 +300,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Category" className="font-medium text-sm text-gray-700 mb-1">Category *</label>
+                <label htmlFor="Category" className="font-medium text-sm text-gray-700 mb-1">
+                  Category
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="Category"
                   value={Category}
@@ -300,7 +321,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="AadharNo" className="font-medium text-sm text-gray-700 mb-1">Aadhar No *</label>
+                <label htmlFor="AadharNo" className="font-medium text-sm text-gray-700 mb-1">
+                  Aadhar No
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="AadharNo"
@@ -313,7 +337,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="previousClass" className="font-medium text-sm text-gray-700 mb-1">Previous Class *</label>
+                <label htmlFor="previousClass" className="font-medium text-sm text-gray-700 mb-1">
+                  Previous Class
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="previousClass"
                   value={previousClass}
@@ -348,7 +375,10 @@ const RegistrationForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Father Details */}
               <div className="flex flex-col">
-                <label htmlFor="fatherName" className="font-medium text-sm text-gray-700 mb-1">Father Name *</label>
+                <label htmlFor="fatherName" className="font-medium text-sm text-gray-700 mb-1">
+                  Father Name
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="fatherName"
@@ -361,7 +391,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Occupation" className="font-medium text-sm text-gray-700 mb-1">Occupation *</label>
+                <label htmlFor="Occupation" className="font-medium text-sm text-gray-700 mb-1">
+                  Occupation
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="Occupation"
@@ -374,7 +407,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="FMobile" className="font-medium text-sm text-gray-700 mb-1">Father Mobile No *</label>
+                <label htmlFor="FMobile" className="font-medium text-sm text-gray-700 mb-1">
+                  Father Mobile No
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="FMobile"
@@ -388,7 +424,10 @@ const RegistrationForm = () => {
 
               {/* Mother Details */}
               <div className="flex flex-col">
-                <label htmlFor="motherName" className="font-medium text-sm text-gray-700 mb-1">Mother Name *</label>
+                <label htmlFor="motherName" className="font-medium text-sm text-gray-700 mb-1">
+                  Mother Name
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="motherName"
@@ -401,7 +440,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="MOccupation" className="font-medium text-sm text-gray-700 mb-1">Occupation *</label>
+                <label htmlFor="MOccupation" className="font-medium text-sm text-gray-700 mb-1">
+                  Occupation
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="MOccupation"
@@ -414,7 +456,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Mmobile" className="font-medium text-sm text-gray-700 mb-1">Mother Mobile No *</label>
+                <label htmlFor="Mmobile" className="font-medium text-sm text-gray-700 mb-1">
+                  Mother Mobile No
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="Mmobile"
@@ -435,7 +480,10 @@ const RegistrationForm = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex flex-col">
-                <label htmlFor="residence" className="font-medium text-sm text-gray-700 mb-1">Residence *</label>
+                <label htmlFor="residence" className="font-medium text-sm text-gray-700 mb-1">
+                  Residence
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="residence"
@@ -448,7 +496,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="country" className="font-medium text-sm text-gray-700 mb-1">Country *</label>
+                <label htmlFor="country" className="font-medium text-sm text-gray-700 mb-1">
+                  Country
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="country"
                   value={country}
@@ -462,7 +513,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="state" className="font-medium text-sm text-gray-700 mb-1">State *</label>
+                <label htmlFor="state" className="font-medium text-sm text-gray-700 mb-1">
+                  State
+                  <span className="text-red-500">*</span>
+                </label>
                 <select
                   id="state"
                   value={state}
@@ -480,7 +534,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="city" className="font-medium text-sm text-gray-700 mb-1">City Name *</label>
+                <label htmlFor="city" className="font-medium text-sm text-gray-700 mb-1">
+                  City Name
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="city"
@@ -493,7 +550,10 @@ const RegistrationForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="pinCode" className="font-medium text-sm text-gray-700 mb-1">PinCode *</label>
+                <label htmlFor="pinCode" className="font-medium text-sm text-gray-700 mb-1">
+                  PinCode
+                  <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   id="pinCode"

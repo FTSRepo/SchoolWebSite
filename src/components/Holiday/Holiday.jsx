@@ -78,7 +78,7 @@ const AcademicContent = () => {
         {/* Note & CTA */}
         <div className="mt-10 text-center">
           <p className="text-sm text-gray-500 mb-4">
-            *Exact dates for examinations and other events will be communicated through school notices.
+            Exact dates for examinations and other events will be communicated through school notices.
           </p>
           {academicCalendar.length > currentMonthEvents.length && (
             <button
