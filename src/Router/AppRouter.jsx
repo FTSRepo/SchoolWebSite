@@ -32,9 +32,9 @@ const router = createBrowserRouter(
                 <Route path='/registration' element={<Registration />} />
             </Route>
 
-            {/* Route without Layout (No Header/Footer) */}
+            {/* Route without Layout (No Header/Footer)
             < Route path="/payment" element={< Payment />} />
-            < Route path="/receiving" element={< Receipt />} />
+            < Route path="/receiving" element={< Receipt />} /> */}
         </>
     )
 )
