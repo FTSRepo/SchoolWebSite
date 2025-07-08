@@ -184,17 +184,17 @@ const RegistrationForm = () => {
     doc.rect(6, 6, pageWidth - 12, pageHeight - 12, "F");
 
     // === STATIC TEXT TOP CORNERS ===
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.setTextColor(80);
+    // doc.setFont("helvetica", "normal");
+    // doc.setFontSize(10);
+    // doc.setTextColor(80);
 
-    // Top-left text (e.g., Session)
-    doc.text("Session: 2025-26", sectionMargin, 10); // X: 10, Y: 10
+    // // Top-left text (e.g., Session)
+    // doc.text("Session: 2025-26", sectionMargin, 10); // X: 10, Y: 10
 
-    // Top-right text (e.g., Form No)
-    doc.text("Form No: DPS-123", pageWidth - sectionMargin, 10, {
-      align: "right",
-    });
+    // // Top-right text (e.g., Form No)
+    // doc.text("Form No: DPS-123", pageWidth - sectionMargin, 10, {
+    //   align: "right",
+    // });
 
     // === LOGO ===
     try {
