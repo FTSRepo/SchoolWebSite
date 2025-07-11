@@ -5,7 +5,7 @@ const BranchesPage = () => {
   const branches = [
     {
       name: 'Motihari Branch',
-      principal: 'Md. Abbas',
+      principal: 'Md Abbas',
       address: 'Behind V.Mart Janpul Road East Champaran Motihari',
       description: `Schools these days are not only meant to attain information and knowledge only, rather they are platforms for collaboration of thoughts and ideas. Dawn Public School , believe that the true strength in our classroom lies in collaboration of learners, not in the knowledge of one Expert.
 
@@ -33,7 +33,7 @@ Thank you for your continued support and commitment to Dawn Public School .`,
     },
     {
       name: 'Jatwa Siswaniya Branch',
-      principal: 'Akilar Rahman',
+      principal: 'Aqeelur rahman',
       address: 'Vill- Jatwa, P/o- Siswaniya, P/s- Banjariya, Motihari  East Champaran 845401 ',
       description: `Schools these days are not only meant to attain information and knowledge only, rather they are platforms for collaboration of thoughts and ideas. Dawn Public School , believe that the true strength in our classroom lies in collaboration of learners, not in the knowledge of one Expert.
 

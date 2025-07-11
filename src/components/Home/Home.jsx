@@ -369,7 +369,7 @@ export default function Home() {
                 alt="Principal"
                 className="w-full h-[300px] object-cover rounded mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-2">Md Abbass Alam</h3>
+              <h3 className="text-xl font-bold mb-2">Md Abbas</h3>
               <p className="text-sm font-medium text-orange-700 mb-2">Principal</p>
               <p className="text-sm mb-4">
                 “At Dawn Public School, we are committed to fostering an environment
@@ -385,7 +385,7 @@ export default function Home() {
                 alt="Director"
                 className="w-full h-[300px] object-cover rounded mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-2">Mrs Farah Khan</h3>
+              <h3 className="text-xl font-bold mb-2">Md Abbas</h3>
               <p className="text-sm font-medium text-orange-700 mb-2">Director</p>
               <p className="text-sm mb-4">
                 “Transparency and trust are at the heart of our financial operations.
@@ -400,7 +400,7 @@ export default function Home() {
                 alt="Administrator"
                 className="w-full h-[300px] object-cover rounded mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-2">Mr Ravi Verma</h3>
+              <h3 className="text-xl font-bold mb-2">Mr Sarvesh Kumar</h3>
               <p className="text-sm font-medium text-orange-700 mb-2">Administrator</p>
               <p className="text-sm mb-4">
                 “From operations to facilities, we strive to create a safe, efficient,
