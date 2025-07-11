@@ -20,7 +20,7 @@ export default function Home() {
   const [popupImg, setPopupImg] = useState(null);
   const [selectedTag, setSelectedTag] = useState(null);
 
-  const schoolId = 60;
+  const schoolId = 14;
 
   {/*FETCHING THE API FOR THE HEADER */ }
 

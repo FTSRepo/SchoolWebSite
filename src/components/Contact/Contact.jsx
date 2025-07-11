@@ -40,7 +40,7 @@ export default function Contact() {
     const enquiryData = {
       ...formData,
       enquiryType: "Online", // Assuming this is fixed for online enquiries
-      schoolId: 60, // Your specific school ID
+      schoolId: 14, 
     };
 
     // You might want to add a loading state here for better UX
