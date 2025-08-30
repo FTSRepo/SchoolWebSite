@@ -6,7 +6,7 @@ const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [lightboxImage, setLightboxImage] = useState(null);
 
-  const schoolId = 14;
+  const schoolId = 149;
 
   useEffect(() => {
     GetHomeImagesAPI("galary", schoolId)

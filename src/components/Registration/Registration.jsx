@@ -32,7 +32,7 @@ const RegistrationForm = () => {
   const [RegStatus] = ["Panding"];
   const [ApplicationMode] = ["Online"];
   const [RegFee] = [10];
-  const [SchoolId] = [14];
+  const [SchoolId] = [149];
 
   // State for API call status and feedback
   const [loading, setLoading] = useState(false);

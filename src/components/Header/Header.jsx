@@ -28,7 +28,7 @@ const Header = () => {
           <div className="flex items-center gap-3 text-center">
             <img src={Logo} alt="School Logo" className="h-16 w-auto" />
             <div className="text-gray-900">
-              <h1 className="text-xl md:text-2xl font-bold">Dawn Public School</h1>
+              <h1 className="text-xl md:text-2xl font-bold">Shanti Hari Sudhanya Chand Public School</h1>
               <p className="text-sm tracking-wide font-medium text-gray-600">ENGLISH MEDIUM & CO-EDUCATION</p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const Header = () => {
         {/* Navigation */}
 
       </header>
-      <nav className="bg-blue-950 shadow-md sticky top-0 z-50">
+      <nav className="bg-gradient-to-r from-orange-400 via-pink-500 to-red-500 shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 relative">
           {/* Hamburger Icon */}
           <div className="md:hidden flex justify-end">
