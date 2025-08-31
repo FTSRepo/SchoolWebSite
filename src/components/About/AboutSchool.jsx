@@ -51,7 +51,8 @@ export class AboutSchool extends Component {
             <p className="text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
               At{" "}
               <span className="font-semibold text-blue-600">
-                Dawn Public School
+                Shanti Hari Sudhanya Chand Public School
+
               </span>
               , we believe in shaping more than just students; we shape
               responsible citizens, innovative thinkers, and compassionate

@@ -20,7 +20,12 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.contact || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.contact ||
+      !formData.message
+    ) {
       toast.error("⚠️ Please fill in all required fields.");
       return;
     }
@@ -33,7 +38,7 @@ export default function Contact() {
       return;
     }
 
-    const enquiryData = { ...formData, enquiryType: "Online", schoolId: 14 };
+    const enquiryData = { ...formData, enquiryType: "Online", schoolId: 149 };
 
     fetch("https://schoolapi.friensys.com:443/api/SaveEnquiry", {
       method: "POST",
@@ -59,7 +64,6 @@ export default function Contact() {
   return (
     <div className="relative bg-gradient-to-r from-blue-50 via-white to-blue-100 py-16 px-6">
       <div className="max-w-7xl mx-auto space-y-16">
-        
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -72,7 +76,6 @@ export default function Contact() {
 
         {/* Contact Info + Form */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -80,7 +83,9 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="backdrop-blur-md bg-white/70 border border-gray-200 shadow-xl rounded-2xl p-8"
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Reach Us</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Reach Us
+            </h2>
             <ul className="space-y-6">
               {[
                 {
@@ -88,8 +93,9 @@ export default function Contact() {
                   title: "Our Location",
                   desc: (
                     <>
-                      <strong>Dawn Public School</strong>
-                      <br /> Behind V.Mart, Janpul Road, Motihari <br /> East Champaran, Bihar - 845401
+                      <strong>Shanti Hari Sudhanya Chand Public School</strong>
+                      <br /> Bel Bag Bangali Colony <br />
+                      Bettiah West Champaran, Bihar - 845439
                     </>
                   ),
                 },
@@ -98,10 +104,10 @@ export default function Contact() {
                   title: "Email Address",
                   desc: (
                     <a
-                      href="mailto:abbasdawn6@gmail.com"
+                      href="mailto:shantiharisudhanyachand@gmail.com"
                       className="text-blue-600 hover:underline"
                     >
-                      abbasdawn6@gmail.com
+                      shantiharisudhanyachand@gmail.com
                     </a>
                   ),
                 },
@@ -110,10 +116,15 @@ export default function Contact() {
                   title: "Admission Inquiry",
                   desc: (
                     <>
-                      <a href="tel:+919525539607" className="text-blue-600 hover:underline">
-                        +91-9525539607
+                      <a
+                        href="tel:+919525539607"
+                        className="text-blue-600 hover:underline"
+                      >
+                        +91-9523464653
                       </a>
-                      <p className="text-sm text-gray-500">Available 9 AM - 5 PM</p>
+                      <p className="text-sm text-gray-500">
+                        Available 9 AM - 5 PM
+                      </p>
                     </>
                   ),
                 },
@@ -138,12 +149,29 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="backdrop-blur-md bg-white/80 border border-gray-200 shadow-xl rounded-2xl p-8"
           >
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Send a Message</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Send a Message
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {[
-                { id: "name", label: "Full Name", type: "text", placeholder: "John Doe" },
-                { id: "email", label: "Email Address", type: "email", placeholder: "you@example.com" },
-                { id: "contact", label: "Phone Number", type: "text", placeholder: "9876543210" },
+                {
+                  id: "name",
+                  label: "Full Name",
+                  type: "text",
+                  placeholder: "John Doe",
+                },
+                {
+                  id: "email",
+                  label: "Email Address",
+                  type: "email",
+                  placeholder: "you@example.com",
+                },
+                {
+                  id: "contact",
+                  label: "Phone Number",
+                  type: "text",
+                  placeholder: "9876543210",
+                },
               ].map((field) => (
                 <div key={field.id}>
                   <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -207,17 +235,20 @@ export default function Contact() {
           transition={{ duration: 0.9 }}
           className="backdrop-blur-md bg-white/80 border border-gray-200 shadow-xl rounded-2xl p-6"
         >
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Find Us On Map</h2>
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+            Find Us On Map
+          </h2>
           <div className="w-full h-[400px] rounded-xl overflow-hidden border shadow-inner">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18..."
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.417474634624!2d84.512539!3d26.7884876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39936ffe74bd92ed%3A0xa0724b2465b83f1!2sShanti%20hari%20sudhanya%20chand%20public%20school!5e0!3m2!1sen!2sin!4v1725116420000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              title="Dawn Public School Location"
-            ></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Shanti Hari Sudhanya Chand Public School"
+            />
           </div>
         </motion.div>
       </div>

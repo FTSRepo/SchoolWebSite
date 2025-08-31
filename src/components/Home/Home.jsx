@@ -425,7 +425,7 @@ export default function Home() {
                 alt="Principal"
                 className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
               />
-              <h3 className="text-2xl font-bold mb-1">Md Abbas</h3>
+              <h3 className="text-2xl font-bold mb-1">Ratneshwar Kishor Sinha</h3>
               <p className="text-sm font-medium text-orange-600 mb-4">
                 Principal
               </p>
@@ -445,7 +445,7 @@ export default function Home() {
                 alt="Director"
                 className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
               />
-              <h3 className="text-2xl font-bold mb-1">Md Abbas</h3>
+              <h3 className="text-2xl font-bold mb-1">Anant Kumar Golder</h3>
               <p className="text-sm font-medium text-orange-600 mb-4">
                 Director
               </p>
@@ -465,9 +465,9 @@ export default function Home() {
                 alt="Administrator"
                 className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
               />
-              <h3 className="text-2xl font-bold mb-1">Mr Sarvesh Kumar</h3>
+              <h3 className="text-2xl font-bold mb-1">Asha Kumari</h3>
               <p className="text-sm font-medium text-orange-600 mb-4">
-                Administrator
+                Vice Principle
               </p>
               <p className="text-sm leading-relaxed">
                 “At Shanti Hari Sudhanya Chand Public School, we aim to inspire
