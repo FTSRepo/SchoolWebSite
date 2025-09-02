@@ -849,6 +849,7 @@ const RegistrationForm = () => {
             Already have an account?{" "}
             <Link
               to="https://school.friensys.com/"
+              target="_blank"
               className="text-blue-600 font-medium hover:underline hover:text-blue-800 transition duration-300"
             >
               Login here

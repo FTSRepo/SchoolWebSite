@@ -4,74 +4,91 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaInstagram,
-  FaTwitter,
   FaYoutube,
   FaFacebook,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-orange-500 via-red-500 to-rose-500 text-white py-12 px-4">
+    <footer className="bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#334155] text-white py-12 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About Us */}
-        <div>
-          <h3 className="text-xl font-bold mb-4 uppercase">About Us</h3>
+        <div className="text-white max-w-xs">
+          {/* Heading */}
+          <h3 className="text-2xl font-semibold mb-6 uppercase tracking-wide border-b border-yellow-400 inline-block pb-2">
+            About Us
+          </h3>
+
+          {/* Description */}
           <p className="text-sm text-gray-200 leading-6">
-            The purpose of school is to provide the highest standard of
-            education under secular atmosphere to children of all communities
-            and all religions. We strive hard to inculcate the best of Indian
-            culture and tradition among our students.
+            The purpose of our school is to provide the highest standard of
+            education under a secular atmosphere to children of all communities
+            and religions. We strive to instill the best of Indian culture and
+            traditions among our students.
           </p>
-          <div className="flex gap-4 mt-5">
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-6">
             <a
               href="#"
-              className="text-white bg-pink-700 p-3 rounded-full hover:bg-pink-600 transition"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-pink-700 hover:opacity-80 transition"
             >
-              <FaInstagram />
+              <FaInstagram className="text-lg" />
             </a>
             <a
               href="#"
-              className="text-white bg-blue-500 p-3 rounded-full hover:bg-blue-700 transition"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-gray-700 to-black hover:opacity-80 transition"
             >
-              <FaTwitter />
+              <FaXTwitter className="text-lg" />
             </a>
             <a
               href="#"
-              className="text-white bg-red-600 p-3 rounded-full hover:bg-red-700 transition"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-blue-700 hover:opacity-80 transition"
             >
-              <FaYoutube />
-            </a>
-            <a
-              href="#"
-              className="text-white bg-blue-600 p-3 rounded-full hover:bg-red-700 transition"
-            >
-              <FaFacebook />
+              <FaFacebook className="text-lg" />
             </a>
           </div>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h3 className="text-xl font-bold mb-4 uppercase">Quick Links</h3>
-          <ul className="space-y-2 text-sm text-gray-200">
+        <div className="text-white">
+          <h3 className="text-2xl font-semibold mb-6 uppercase tracking-wide border-b border-yellow-400 inline-block pb-2">
+            Quick Links
+          </h3>
+
+          <ul className="space-y-3 text-sm text-gray-200">
             <li>
-              <a href="/" className="hover:text-yellow-400">
-                › Home
+              <a
+                href="/"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Aims & Objective
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Aims & Objective
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Curriculum
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Curriculum
               </a>
             </li>
             <li>
-              <a href="/gallery" className="hover:text-yellow-400">
-                › Gallery
+              <a
+                href="/gallery"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Gallery
               </a>
             </li>
             <li>
@@ -79,90 +96,121 @@ const Footer = () => {
                 href="https://play.google.com/store/apps/details?id=com.friensys.dawn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-yellow-400"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
               >
-                › Download App
+                <span className="text-yellow-400">›</span> Download App
               </a>
             </li>
           </ul>
         </div>
 
         {/* Useful Links */}
-        <div>
-          <h3 className="text-xl font-bold mb-4 uppercase">Useful Links</h3>
-          <ul className="space-y-2 text-sm text-gray-200">
+        <div className="text-white">
+          <h3 className="text-2xl font-semibold mb-6 uppercase tracking-wide border-b border-yellow-400 inline-block pb-2">
+            Useful Links
+          </h3>
+
+          <ul className="space-y-3 text-sm text-gray-200">
             <li>
-              <a href="/contact" className="hover:text-yellow-400">
-                › Admission Enquiry
+              <a
+                href="/contact"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Admission Enquiry
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Admission Details
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Admission Details
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Fee Structure
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Fee Structure
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Laboratory
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Laboratory
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
-                › Computer Lab
+              <a
+                href="#"
+                className="flex items-center gap-2 hover:text-yellow-300 transition"
+              >
+                <span className="text-yellow-400">›</span> Computer Lab
               </a>
             </li>
           </ul>
         </div>
 
         {/* Contact Us */}
-        <div>
-          <h3 className="text-xl font-bold mb-4 uppercase">Contact Us</h3>
-          <div className="text-sm text-gray-200 space-y-4">
-            <div className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-xl mt-1 text-yellow-400" />
-              <p>
-                Bel Bag Bangali Colony <br />
-               Bettiah West Champaran
-                <br />
-                 Bihar
+        <div className="text-white">
+          <h3 className="text-2xl font-semibold mb-6 uppercase tracking-wide border-b border-yellow-400 inline-block pb-2">
+            Contact Us
+          </h3>
 
+          <div className="text-sm text-gray-200 space-y-6">
+            {/* Address */}
+            <div className="flex items-start gap-4">
+              <FaMapMarkerAlt className="text-2xl text-yellow-400 mt-1" />
+              <p className="leading-relaxed">
+                Bel Bag Bangali Colony <br />
+                Bettiah, West Champaran <br />
+                Bihar, India
               </p>
             </div>
-            <div className="flex items-center gap-3 border-t border-gray-400 pt-4">
-              <FaPhoneAlt className="text-yellow-400" />
-              <span>+91 9523464653</span>
+
+            {/* Phone */}
+            <div className="flex items-center gap-4 border-t border-gray-600 pt-4">
+              <FaPhoneAlt className="text-lg text-yellow-400" />
+              <span className="hover:text-yellow-300 transition">
+                +91 95234 64653
+              </span>
             </div>
-            <div className="flex items-center gap-3 border-t border-gray-400 pt-4">
-              <FaEnvelope className="text-yellow-400" />
+
+            {/* Email */}
+            <div className="flex items-center gap-4 border-t border-gray-600 pt-4">
+              <FaEnvelope className="text-lg text-yellow-400" />
               <a
-                href="mailto:shantiharisudhanyachand@gmail.com
-"
-                className="hover:underline"
+                href="mailto:shantiharisudhanyachand@gmail.com"
+                className="hover:text-yellow-300 transition"
               >
                 shantiharisudhanyachand@gmail.com
               </a>
             </div>
-            <div className="flex items-center gap-3 border-t border-gray-400 pt-4">
-              <a href="mailto:abbasdawn6@gmail.com" className="hover:underline">
+
+            {/* Privacy Policy */}
+            <div className="flex items-center gap-4 border-t border-gray-600 pt-4">
+              <Link
+                to="/privacy-policy"
+                className="hover:text-yellow-300 transition"
+              >
                 Privacy Policy
-              </a>
-              <a href="mailto:abbasdawn6@gmail.com" className="hover:underline">
-                Cancellation Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="text-center text-sm text-gray-300 mt-12 border-t border-gray-600 pt-6">
-        <p>
-          © {new Date().getFullYear()} Dawn Public School. All rights reserved.
+      <div className="text-center text-sm text-gray-400 mt-12 border-t border-gray-700 pt-6">
+        <p className="mb-2">
+          © {new Date().getFullYear()}{" "}
+          <span className="text-white font-medium">
+            Shanti Hari Sudhanya Chand Public School
+          </span>
+          . All Rights Reserved.
         </p>
         <p>
           Managed by{" "}
@@ -170,7 +218,7 @@ const Footer = () => {
             href="https://friensys.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white underline hover:text-yellow-400"
+            className="text-yellow-400 hover:text-yellow-300 transition underline underline-offset-4"
           >
             Friensys Info Labs
           </a>

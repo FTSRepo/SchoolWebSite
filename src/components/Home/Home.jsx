@@ -550,49 +550,52 @@ export default function Home() {
       )}
 
       {/* ADMISSION CALL SECTION */}
-      <section className="relative py-24 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 text-white overflow-hidden">
-        {/* Decorative background circles */}
-        <div className="absolute top-0 left-0 w-40 h-40 bg-blue-400/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-56 h-56 bg-blue-500/20 rounded-full blur-3xl animate-ping"></div>
+      <section className="relative py-24 bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-500 text-white overflow-hidden">
+      {/* Decorative animated circles */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-10 right-10 w-56 h-56 bg-indigo-400/20 rounded-full blur-3xl animate-ping"></div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-            Ready to Join the{" "}
-            <span className="relative">
-              SHANTI HARI SUDHANYA CHAND PUBLIC SCHOOL
-              <span className="absolute left-0 bottom-0 w-full h-2 bg-orange-400/70 rounded-md animate-[pulse_2s_infinite]"></span>
-            </span>{" "}
-            Family?
-          </h2>
+      <div className="relative max-w-5xl mx-auto px-6 text-center">
+        {/* Title */}
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+          Ready to Join the{" "}
+          <span className="relative text-yellow-300">
+            SHANTI HARI SUDHANYA CHAND PUBLIC SCHOOL
+            <span className="absolute left-0 bottom-1 w-full h-2 bg-yellow-400/60 rounded-md -z-10"></span>
+          </span>{" "}
+          Family?
+        </h2>
 
-          <p className="text-lg md:text-xl text-blue-100 mb-10">
-            Discover an environment where{" "}
-            <span className="font-semibold text-orange-300">
-              academic excellence
-            </span>{" "}
-            meets holistic development. Enroll your child today and unlock their
-            full potential.
-          </p>
+        {/* Subtitle */}
+        <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-10">
+          Discover an environment where{" "}
+          <span className="font-semibold text-yellow-200">
+            academic excellence
+          </span>{" "}
+          meets holistic development. Enroll your child today and unlock their
+          full potential.
+        </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-5">
-            <Link
-              to="/Registration"
-              className="relative bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-orange-400/40"
-            >
-              Apply for Admission
-              <span className="absolute inset-0 rounded-xl border-2 border-orange-400 opacity-0 hover:opacity-100 transition"></span>
-            </Link>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <Link
+            to="/Registration"
+            className="relative bg-yellow-400 text-indigo-900 font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-yellow-300/50"
+          >
+            Apply for Admission
+            <span className="absolute inset-0 rounded-xl border-2 border-yellow-300 opacity-0 hover:opacity-100 transition"></span>
+          </Link>
 
-            <Link
-              to="/Contact"
-              className="relative bg-white text-blue-700 font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:bg-blue-50"
-            >
-              Schedule a Visit
-              <span className="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0 hover:opacity-100 transition"></span>
-            </Link>
-          </div>
+          <Link
+            to="/Contact"
+            className="relative bg-white text-blue-700 font-semibold py-3 px-8 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:bg-blue-50"
+          >
+            Schedule a Visit
+            <span className="absolute inset-0 rounded-xl border-2 border-blue-300 opacity-0 hover:opacity-100 transition"></span>
+          </Link>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 }

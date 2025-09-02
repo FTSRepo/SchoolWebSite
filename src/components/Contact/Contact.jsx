@@ -3,6 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { Contact as ContactIcon  } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -62,95 +63,95 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative bg-gradient-to-r from-blue-50 via-white to-blue-100 py-16 px-6">
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+    <div className="bg-gradient-to-br from-sky-50 via-white to-blue-50 min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-indigo-700 via-blue-700 to-sky-600 text-white py-20 shadow-lg relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-400/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-56 h-56 bg-sky-500/20 rounded-full blur-3xl animate-ping"></div>
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <ContactIcon className="w-16 h-16 text-blue-200 mx-auto mb-4" />
+          <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
+            Contact Us
+          </h1>
+          <p className="mt-3 text-blue-100 text-lg">
+            We’d love to hear from you. Reach out today!
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <div className="max-w-7xl mx-auto px-6 py-20 space-y-20">
+        {/* Info Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-extrabold text-center text-blue-800 drop-shadow-lg"
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          Get In Touch With Us
-        </motion.h1>
+          {[
+            {
+              icon: <FaMapMarkerAlt />,
+              title: "Our Location",
+              desc: (
+                <>
+                  Shanti Hari Sudhanya Chand Public School <br />
+                  Bel Bag Bangali Colony, Bettiah <br />
+                  West Champaran, Bihar - 845439
+                </>
+              ),
+            },
+            {
+              icon: <FaEnvelope />,
+              title: "Email Us",
+              desc: (
+                <a
+                  href="mailto:shantiharisudhanyachand@gmail.com"
+                  className="text-blue-600 hover:underline"
+                >
+                  shantiharisudhanyachand@gmail.com
+                </a>
+              ),
+            },
+            {
+              icon: <FaPhoneAlt />,
+              title: "Call Us",
+              desc: (
+                <>
+                  <a
+                    href="tel:+919523464653"
+                    className="text-blue-600 hover:underline"
+                  >
+                    +91-9523464653
+                  </a>
+                  <p className="text-sm text-gray-500">Mon–Sat, 9AM – 5PM</p>
+                </>
+              ),
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white shadow-xl rounded-2xl p-8 text-center border hover:shadow-2xl transition"
+            >
+              <div className="flex justify-center items-center w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-2xl shadow-lg">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">{item.title}</h3>
+              <p className="mt-2 text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </motion.div>
 
-        {/* Contact Info + Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="backdrop-blur-md bg-white/70 border border-gray-200 shadow-xl rounded-2xl p-8"
-          >
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Reach Us
-            </h2>
-            <ul className="space-y-6">
-              {[
-                {
-                  icon: <FaMapMarkerAlt />,
-                  title: "Our Location",
-                  desc: (
-                    <>
-                      <strong>Shanti Hari Sudhanya Chand Public School</strong>
-                      <br /> Bel Bag Bangali Colony <br />
-                      Bettiah West Champaran, Bihar - 845439
-                    </>
-                  ),
-                },
-                {
-                  icon: <FaEnvelope />,
-                  title: "Email Address",
-                  desc: (
-                    <a
-                      href="mailto:shantiharisudhanyachand@gmail.com"
-                      className="text-blue-600 hover:underline"
-                    >
-                      shantiharisudhanyachand@gmail.com
-                    </a>
-                  ),
-                },
-                {
-                  icon: <FaPhoneAlt />,
-                  title: "Admission Inquiry",
-                  desc: (
-                    <>
-                      <a
-                        href="tel:+919525539607"
-                        className="text-blue-600 hover:underline"
-                      >
-                        +91-9523464653
-                      </a>
-                      <p className="text-sm text-gray-500">
-                        Available 9 AM - 5 PM
-                      </p>
-                    </>
-                  ),
-                },
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-4 group">
-                  <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-4 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 text-xl">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
+        {/* Form + Map */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="backdrop-blur-md bg-white/80 border border-gray-200 shadow-xl rounded-2xl p-8"
+            className="bg-white shadow-2xl rounded-2xl p-10 border"
           >
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Send a Message
+              Send Us a Message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               {[
@@ -203,55 +204,56 @@ export default function Contact() {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Write your query here..."
+                  placeholder="Write your message here..."
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none transition-all duration-200"
                 />
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-wrap gap-4 justify-center mt-4">
+              <div className="flex flex-wrap gap-4 justify-center mt-6">
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:scale-105 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:scale-105 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition duration-200"
                 >
-                  🚀 Send
+                  🚀 Send Message
                 </button>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200"
+                  className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-semibold shadow-md transition duration-200"
                 >
                   🧹 Clear
                 </button>
               </div>
             </form>
           </motion.div>
-        </div>
 
-        {/* Map */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="backdrop-blur-md bg-white/80 border border-gray-200 shadow-xl rounded-2xl p-6"
-        >
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-            Find Us On Map
-          </h2>
-          <div className="w-full h-[400px] rounded-xl overflow-hidden border shadow-inner">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.417474634624!2d84.512539!3d26.7884876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39936ffe74bd92ed%3A0xa0724b2465b83f1!2sShanti%20hari%20sudhanya%20chand%20public%20school!5e0!3m2!1sen!2sin!4v1725116420000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Shanti Hari Sudhanya Chand Public School"
-            />
-          </div>
-        </motion.div>
+          {/* Google Map */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white shadow-2xl rounded-2xl p-6 border"
+          >
+            <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+              Find Us on Map
+            </h2>
+            <div className="w-full h-[450px] rounded-xl overflow-hidden border shadow-inner">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.417474634624!2d84.512539!3d26.7884876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39936ffe74bd92ed%3A0xa0724b2465b83f1!2sShanti%20hari%20sudhanya%20chand%20public%20school!5e0!3m2!1sen!2sin!4v1725116420000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Shanti Hari Sudhanya Chand Public School"
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
+
       <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );

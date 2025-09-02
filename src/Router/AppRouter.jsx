@@ -15,6 +15,8 @@ import Registration from '../components/Registration/Registration';
 import About from '../components/About/About';
 import AboutSchool from '../components/About/AboutSchool';
 
+import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
@@ -30,6 +32,7 @@ const router = createBrowserRouter(
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/branches' element={<Branches />} />
                 <Route path='/registration' element={<Registration />} />
+                <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             </Route>
 
             {/* Route without Layout (No Header/Footer)
