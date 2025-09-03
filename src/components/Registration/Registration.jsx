@@ -32,7 +32,7 @@ const RegistrationForm = () => {
   const [RegStatus] = ["Panding"];
   const [ApplicationMode] = ["Online"];
   const [RegFee] = [10];
-  const [SchoolId] = [149];
+  const [SchoolId] = [14];
 
   // State for API call status and feedback
   const [loading, setLoading] = useState(false);
@@ -52,74 +52,90 @@ const RegistrationForm = () => {
   // 2. API Endpoint (Replace with your actual API endpoint)
 
   const API_ENDPOINT =
-    "https://schoolapi.friensys.com:443/api/SaveRegistrationWeb";
-  // https://schoolapi.friensys.com:443/api/SaveRegistrationWeb
+    // "https://schoolapi.friensys.com:443/api/SaveRegistrationWeb";
+" https://schoolapi.friensys.com:443/api/SaveRegistrationWeb"
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setMessage("");
 
-    setLoading(true);
-    setMessage("");
-
-    const formData = {
-      Name,
-      Dob,
-      Class,
-      Gender,
-      BloodGroup,
-      Religion,
-      Category,
-      AadharNo,
-      previousClass,
-      fatherName,
-      Occupation,
-      FMobile,
-      motherName,
-      MOccupation,
-      Mmobile,
-      residence,
-      country,
-      state,
-      city,
-      pinCode,
-      SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null,
-      RegStatus,
-      ApplicationMode,
-      RegFee,
-      SchoolId,
-    };
-    try {
-      const response = await fetch(API_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.status) {
-        const apiResponse = await response.json();
-        const data = apiResponse.data;
-        setbasePrice(data.registrationNo);
-        setKeyId(data.clientKey);
-        setorderid(data.paymentGatewayOrderId);
-        setschollid(data.schoolId);
-        setRegistrationNumber(data.registrationNumber);
-        setName(data.name);
-        setMessage("Registration successful! " + data.message);
-        generatePDF(data.registrationNo);
-        handleClear();
-      } else {
-        const errorData = await response.json();
-        setMessage(`Registration failed: ${errorData.regNo || response.regNo}`);
-      }
-    } catch (error) {
-      console.error("Error during registration:", error);
-      setMessage("Network error. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
+  const formData = {
+    Name,
+    Dob,
+    Class,
+    Gender,
+    BloodGroup,
+    Religion,
+    Category,
+    AadharNo,
+    previousClass,
+    fatherName,
+    Occupation,
+    FMobile,
+    motherName,
+    MOccupation,
+    Mmobile,
+    residence,
+    country,
+    state,
+    city,
+    pinCode,
+    SchoolDis: SchoolDis ? parseFloat(SchoolDis) : null,
+    RegStatus,
+    ApplicationMode,
+    RegFee,
+    SchoolId,
   };
+
+  try {
+    const response = await fetch(API_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      // server returned an error code (400/500 etc)
+      const errorData = await response.json();
+      setMessage(`Registration failed: ${errorData.message || "Unknown error"}`);
+      return;
+    }
+
+    const apiResponse = await response.json();
+
+    if (!apiResponse || !apiResponse.data) {
+      setMessage("Registration failed: No data returned from server");
+      return;
+    }
+
+    const data = apiResponse.data;
+
+    // Ensure property exists
+    const regNo = data.registrationNo || data.registrationNumber || "N/A";
+
+    setbasePrice(regNo);
+    setKeyId(data.clientKey || "");
+    setorderid(data.paymentGatewayOrderId || "");
+    setschollid(data.schoolId || "");
+    setRegistrationNumber(regNo);
+    setName(data.name || "");
+    setMessage("Registration successful! " + (data.message || ""));
+
+    // Only generate PDF if regNo is valid
+    if (regNo && regNo !== "N/A") {
+      generatePDF(regNo);
+    }
+
+    handleClear();
+  } catch (error) {
+    console.error("Error during registration:", error);
+    setMessage("Network error. Please try again later.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleClear = () => {
     setStudentName("");
@@ -148,6 +164,7 @@ const RegistrationForm = () => {
 
     setMessage("");
   };
+  
   const generatePDF = (regNo) => {
     const doc = new jsPDF("p", "mm", "a4");
     const pageWidth = doc.internal.pageSize.getWidth();
@@ -207,7 +224,7 @@ const RegistrationForm = () => {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
     doc.setTextColor(30, 30, 30);
-    doc.text("Dawn Public School", centerX + 10, 20, { align: "center" });
+    doc.text("Shanti Hari Sudhanya Chand Public School", centerX + 10, 20, { align: "center" });
 
     doc.setFont("helvetica", "normal");
     doc.setFontSize(11);
@@ -217,14 +234,14 @@ const RegistrationForm = () => {
 
     doc.setFontSize(10);
     doc.text(
-      "Behind V.Mart, Janpul Road, Motihari, East Champaran, Bihar - 845401",
+      "Bel Bag Bangali Colony, Bettiah, West Champaran, Bihar, India",
       centerX + 10,
       32,
       { align: "center" }
     );
 
     doc.text(
-      "Phone: 9525539607 | Email: abbasdawn6@gmail.com",
+      "Phone: 91 95234 64653 | Email: shantiharisudhanyachand@gmail.com",
       centerX + 10,
       37,
       { align: "center" }

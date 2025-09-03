@@ -52,10 +52,10 @@ export default function Contact() {
           toast.success("🎉 Enquiry submitted successfully!");
           setFormData({ name: "", email: "", contact: "", message: "" });
         } else {
-          toast.error(data.message || "❌ Submission failed.");
+          toast.error(data.message || " Submission failed.");
         }
       })
-      .catch(() => toast.error("❌ Network error, please try again later."));
+      .catch(() => toast.error(" Network error, please try again later."));
   };
 
   const handleReset = () => {
