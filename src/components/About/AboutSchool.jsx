@@ -7,37 +7,34 @@ export class AboutSchool extends Component {
     return (
       <div className="font-sans">
         {/* Hero Section */}
-        <header
-          className="relative h-[70vh] bg-cover bg-center flex items-center justify-center"
-          style={{ backgroundImage: `url(${images.backgroundBanner})` }}
-        >
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
-
-          {/* Cards Container */}
-          <div className="relative z-10 grid md:grid-cols-3 gap-6 px-6 max-w-6xl">
+        <header className="relative h-[60vh] bg-gradient-to-r from-indigo-800 via-blue-600 to-indigo-900 flex items-center justify-center">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-6xl">
             {/* Card 1 */}
-            <div className="bg-white/90 p-6 rounded-xl shadow-xl transform hover:-translate-y-2 transition">
-              <h2 className="text-2xl font-bold text-indigo-900 mb-2">
+            <div className="bg-white/95 p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <h2 className="text-2xl font-semibold text-indigo-900 mb-3">
                 Welcome
               </h2>
-              <p className="text-gray-700">
-                Shanti Hari Sudhanya Chand Public School: Where Futures Take
-                Flight
+              <p className="text-gray-600 leading-relaxed">
+                At Shanti Hari Sudhanya Chand Public School, we empower students
+                to soar to new heights through holistic education and
+                innovation.
               </p>
             </div>
             {/* Card 2 */}
-            <div className="bg-indigo-600 text-white p-6 rounded-xl shadow-xl transform hover:-translate-y-2 transition">
-              <h2 className="text-2xl font-bold mb-2">Our Vision</h2>
-              <p>
-                Nurturing Minds, Inspiring Excellence, Building Tomorrow's
-                Leaders.
+            <div className="bg-indigo-700 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <h2 className="text-2xl font-semibold mb-3">Our Vision</h2>
+              <p className="leading-relaxed">
+                Fostering intellectual growth, inspiring excellence, and shaping
+                compassionate leaders for a brighter future.
               </p>
             </div>
             {/* Card 3 */}
-            <div className="bg-yellow-400 text-indigo-900 p-6 rounded-xl shadow-xl transform hover:-translate-y-2 transition">
-              <h2 className="text-2xl font-bold mb-2">Join Us</h2>
-              <p>Be part of a community that shapes bright futures.</p>
+            <div className="bg-blue-100 text-indigo-900 p-8 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <h2 className="text-2xl font-semibold mb-3">Join Us</h2>
+              <p className="leading-relaxed">
+                Become part of a vibrant community dedicated to nurturing talent
+                and building tomorrow's innovators.
+              </p>
             </div>
           </div>
         </header>
@@ -52,7 +49,6 @@ export class AboutSchool extends Component {
               At{" "}
               <span className="font-semibold text-blue-600">
                 Shanti Hari Sudhanya Chand Public School
-
               </span>
               , we believe in shaping more than just students; we shape
               responsible citizens, innovative thinkers, and compassionate
@@ -203,84 +199,66 @@ export class AboutSchool extends Component {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-6 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-10">
-              Why Choose Dawn Public School
-            </h2>
-            <div className="space-y-10">
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <img
-                  src={images.dynamic}
-                  alt="Dynamic Learning"
-                  className="w-full md:w-1/2 rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Dynamic Learning Environment
-                  </h3>
-                  <p>
-                    At our school, learning goes beyond textbooks. Our
-                    classrooms are vibrant centers of exploration where students
-                    engage in interactive lessons, group discussions, and
-                    hands-on activities. Equipped with smart boards, digital
-                    tools, and flexible seating, each space is designed to
-                    foster creativity and critical thinking. Guided by
-                    passionate and experienced educators, we cultivate an
-                    atmosphere that encourages curiosity, collaboration, and a
-                    lifelong love for learning.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row-reverse gap-6 items-center">
-                <img
-                  src={images.artFacilities}
-                  alt="Facilities"
-                  className="w-full md:w-1/2 rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    State-of-the-Art Facilities
-                  </h3>
-                  <p>
-                    Our school is equipped with world-class infrastructure
-                    designed to foster learning, creativity, and growth. From
-                    modern science and computer laboratories that encourage
-                    hands-on exploration, to a vast and well-stocked library
-                    that inspires a love for reading — every corner of our
-                    campus supports student development. Our expansive sports
-                    grounds, indoor activity centers, and dedicated spaces for
-                    visual and performing arts empower students to discover and
-                    pursue their passions beyond the classroom.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <img
-                  src={images.coCurricular}
-                  alt="Co-curricular"
-                  className="w-full md:w-1/2 rounded-lg shadow-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Holistic Development & Co-curricular Excellence
-                  </h3>
-                  <p>
-                    We believe education is complete only when it nurtures both
-                    the mind and the spirit. Our school offers a vibrant array
-                    of co-curricular activities — including sports, visual and
-                    performing arts, music, dance, and student-led clubs — that
-                    promote personal growth and creative expression. These
-                    opportunities help students discover their talents, build
-                    confidence, cultivate teamwork, and develop essential
-                    leadership and life skills, preparing them to thrive in
-                    every sphere of life.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="py-16 px-6 bg-gradient-to-b from-gray-100 to-blue-50">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-bold text-center text-indigo-900 mb-12 relative">
+      Why Choose Shanti Hari Sudhanya Chand Public School
+      <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-8px] w-24 h-1 bg-indigo-600 rounded-full"></span>
+    </h2>
+    <div className="space-y-12">
+      {/* Section 1 - Dynamic Learning */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+          <img
+            src={images.dynamic}
+            alt="Dynamic Learning"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-2xl font-semibold text-indigo900 mb-3">Dynamic Learning Environment</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Our classrooms are vibrant hubs of innovation, where interactive lessons, group discussions, and hands-on activities spark curiosity. Equipped with smart boards and digital tools, we foster an environment that encourages critical thinking, collaboration, and a lifelong passion for learning, guided by dedicated educators.
+          </p>
+        </div>
+      </div>
+
+      {/* Section 2 - State-of-the-Art Facilities */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+        <div className="p-4 md:order-last">
+          <h3 className="text-2xl font-semibold text-indigo-900 mb-3">State-of-the-Art Facilities</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Our campus boasts modern science and computer labs, a well-stocked library, and expansive sports grounds. Dedicated spaces for visual and performing arts inspire creativity, while our world-class infrastructure supports holistic growth, empowering students to explore and excel in their passions.
+          </p>
+        </div>
+        <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+          <img
+            src={images.artFacilities}
+            alt="Facilities"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Section 3 - Holistic Development */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+          <img
+            src={images.coCurricular}
+            alt="Co-curricular"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-2xl font-semibold text-indigo-900 mb-3">Holistic Development & Co-curricular Excellence</h3>
+          <p className="text-gray-600 leading-relaxed">
+            We nurture both mind and spirit through a diverse range of co-curricular activities, including sports, arts, music, and student-led clubs. These programs build confidence, teamwork, and leadership skills, preparing students to thrive in all aspects of life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     );
   }

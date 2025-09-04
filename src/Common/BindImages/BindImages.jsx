@@ -17,18 +17,18 @@ import artFacilities from '../../assets/schoolImages/About/artFacilities.png';
 import coCurricular from '../../assets/schoolImages/About/coCurricular.jpg';
 import primary from '../../assets/schoolImages/Home/Primary.jpg'
 import middle from '../../assets/schoolImages/Home/Middle.png'
-import secondary from '../../assets/schoolImages/Home/Secondary.jpg'
+import secondary from '../../assets/schoolImages/Shanti-Hari/Images/SecondarySchool.jpg'
 import transport from '../../assets/schoolImages/About/Transport.jpg'
-import backgroundBanner from '../../assets/schoolImages/About/backgroundBanner.jpg'
 import academicSports from '../../assets/schoolImages/Academic/sports.jpg'
 import academicLibrary from '../../assets/schoolImages/Academic/Library.jpg'
 import academicScienceLab from '../../assets/schoolImages/Academic/scienceLab.jpg'
 import academicComputerLab from '../../assets/schoolImages/Academic/computerLab.jpg'
 import academicPlayground from '../../assets/schoolImages/Academic/Playground.jpg'
-import academicBackground from '../../assets/schoolImages/Academic/academicBackground.jpg'
+import academicBackground from '../../assets/schoolImages/Shanti-Hari/Images/academicBackground.jpg'
 import dpsPrinciple from "../../assets/schoolImages/DpsPrinciple.jpg"
 import belaPrinciple from "../../assets/schoolImages/BelaPrinc.jpg"
 import dummyPic from "../../assets/schoolImages/dummy.jpg"
+
 
 const images = {
   scienceLab,
@@ -52,7 +52,6 @@ const images = {
   middle,
   secondary,
   transport,
-  backgroundBanner,
   academicSports,
   academicScienceLab,
   academicLibrary,
