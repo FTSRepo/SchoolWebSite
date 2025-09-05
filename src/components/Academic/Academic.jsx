@@ -245,7 +245,7 @@ const AcademicContent = () => {
       </section>
 
       {/* Holiday / Academic Calendar */}
-      <Holiday />
+      {/* <Holiday /> */}
 
       {/* Call to Action */}
       <section id="admissions" className="py-20 px-6 bg-blue-100 text-center">
