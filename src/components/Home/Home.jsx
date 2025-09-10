@@ -6,6 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
+import { FaXTwitter } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaLinkedin
+} from "react-icons/fa";
 
 export default function Home() {
   const [headerImages, setHeaderImages] = useState([]);
@@ -33,7 +40,7 @@ export default function Home() {
         const data = res.data?.data || {};
         setHeaderImages(data.headerImages || []);
         setPrincipalImg(data.principalImg || "");
-        setDirectorImg(data.directorImg || "");
+        setDirectorImg(data.directorImg || [] );
         setAdministratorImg(data.administratorImg || "");
       })
       .catch((err) => {
@@ -357,7 +364,7 @@ export default function Home() {
             What Our Parents Say
           </h2>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-            Discover how DAWN PUBLIC SCHOOL has impacted the lives of students
+            Discover how Shanti Hari Sudhanya Chand Public School has impacted the lives of students
             and families through meaningful education and holistic development.
           </p>
 
@@ -365,7 +372,7 @@ export default function Home() {
             {[
               {
                 quote:
-                  "DAWN PUBLIC SCHOOL has transformed my child's learning journey. The teachers are incredibly supportive and the environment is truly nurturing.",
+                  "Shanti Hari Sudhanya Chand Public School has transformed my child's learning journey. The teachers are incredibly supportive and the environment is truly nurturing.",
                 author: "Mrs. Priya Sharma",
                 role: "Parent of Class 5 Student",
               },
@@ -410,76 +417,111 @@ export default function Home() {
       </section>
 
       {/* SCHOOL CORE TEAM */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-50 to-slate-200">
-        <div className="max-w-7xl mx-auto text-center text-gray-900">
-          <h2 className="text-4xl font-extrabold mb-14 relative inline-block">
-            Meet Our Core Team
-            <span className="absolute left-0 -bottom-2 w-full h-1 bg-orange-500 rounded"></span>
-          </h2>
+      <section className="py-20 px-6 bg-gradient-to-br from-purple-100 via-teal-50 to-blue-100">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl font-extrabold text-gray-800 mb-14 relative"
+        >
+          Our Leadership Team
+          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-teal-500 rounded-full transition-all duration-300 hover:w-28"></span>
+        </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-            {/* Card 1 - Principal */}
-            <div className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-              <img
-                src={principalImg}
-                alt="Principal"
-                className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
-              />
-              <h3 className="text-2xl font-bold mb-1">Ratneshwar Kishor Sinha</h3>
-              <p className="text-sm font-medium text-orange-600 mb-4">
-                Principal
-              </p>
-              <p className="text-sm leading-relaxed">
-                “At Shanti Hari Sudhanya Chand Public School, our vision is to
-                nurture every child’s intellect, creativity, and character. We
-                are committed to building a strong foundation of values and
-                knowledge, empowering students to embrace challenges, celebrate
-                learning, and grow into responsible global citizens.”
-              </p>
-            </div>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {[
+             {
+              name: "Dr Avinash Goldar",
+              role: "Founder & Chairman",
+              img: images.founderImage,
+              quote:
+                "Our goal is to foster a love for learning through innovative teaching methods, ensuring students are equipped with skills for a dynamic world.",
+            },
+            {
+              name: "Ratneshwar Kishor Sinha",
+              role: "Principal",
+              img: principalImg,
+              quote:
+                "At Shanti Hari Sudhanya Chand Public School, our vision is to nurture every child’s intellect, creativity, and character. We empower students to embrace challenges and grow into responsible global citizens.",
+            },
+            {
+              name: "Anant Kumar Golder",
+              role: "Director",
+              img: directorImg,
+              quote:
+                "We envision a joyful learning environment where values are nurtured and excellence is achieved. Our students are shaped into confident individuals with integrity and compassion.",
+            },
+            {
+              name: "Asha Kumari",
+              role: "Vice Principal",
+              img: administratorImg,
+              quote:
+                "We aim to inspire curiosity, instill resilience, and cultivate leadership, preparing students to succeed and contribute meaningfully to society.",
+            },
+          ].map((leader, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              className="relative bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
+            >
+              {/* Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 to-blue-400"></div>
 
-            {/* Card 2 - Director */}
-            <div className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-              <img
-                src={directorImg}
-                alt="Director"
-                className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
-              />
-              <h3 className="text-2xl font-bold mb-1">Anant Kumar Golder</h3>
-              <p className="text-sm font-medium text-orange-600 mb-4">
-                Director
-              </p>
-              <p className="text-sm leading-relaxed">
-                “Shanti Hari Sudhanya Chand Public School envisions an
-                environment where learning is joyful, values are nurtured, and
-                excellence is achieved. We strive to shape students into
-                confident individuals with integrity, compassion, and the skills
-                necessary to thrive in a rapidly changing world.”
-              </p>
-            </div>
+              {/* Profile Image */}
+              <div className="relative mt-8">
+                <div className="w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-tr from-teal-400 to-blue-400">
+                  <img
+                    src={leader.img}
+                    alt={leader.role}
+                    className="w-full h-full object-cover rounded-full border-4 border-white"
+                  />
+                </div>
+              </div>
 
-            {/* Card 3 - Administrator */}
-            <div className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-              <img
-                src={administratorImg}
-                alt="Administrator"
-                className="w-40 h-40 object-cover rounded-full mx-auto mb-6 border-4 border-orange-500 shadow-md"
-              />
-              <h3 className="text-2xl font-bold mb-1">Asha Kumari</h3>
-              <p className="text-sm font-medium text-orange-600 mb-4">
-                Vice Principle
-              </p>
-              <p className="text-sm leading-relaxed">
-                “At Shanti Hari Sudhanya Chand Public School, we aim to inspire
-                curiosity, instill resilience, and cultivate leadership in every
-                child. Guided by our commitment to academic excellence and
-                holistic growth, we prepare our students to not only succeed in
-                their careers but also contribute meaningfully to society.”
-              </p>
-            </div>
-          </div>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-1">
+                  {leader.name}
+                </h3>
+                <p className="text-sm font-medium text-teal-600 mb-4">
+                  {leader.role}
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed italic">
+                  “{leader.quote}”
+                </p>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <a
+                  href="#"
+                  className="p-3 bg-white rounded-full text-teal-600 hover:bg-teal-600 hover:text-white transition"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 bg-white rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition"
+                >
+                  <FaXTwitter />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 bg-white rounded-full text-red-500 hover:bg-red-500 hover:text-white transition"
+                >
+                  <FaEnvelope />
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* NEWS AND EVENT SECTION */}
       {newsEvent.some(

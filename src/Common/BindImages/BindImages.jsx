@@ -28,6 +28,7 @@ import academicBackground from '../../assets/schoolImages/Shanti-Hari/Images/aca
 import dpsPrinciple from "../../assets/schoolImages/DpsPrinciple.jpg"
 import belaPrinciple from "../../assets/schoolImages/BelaPrinc.jpg"
 import dummyPic from "../../assets/schoolImages/dummy.jpg"
+import founderImage from '../../assets/schoolImages/Shanti-Hari/Founder.jpg'
 
 
 const images = {
@@ -60,7 +61,8 @@ const images = {
   academicBackground,
   dpsPrinciple,
   belaPrinciple,
-  dummyPic
+  dummyPic,
+  founderImage
 };
 
 export default images;

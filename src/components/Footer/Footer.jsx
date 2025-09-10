@@ -49,6 +49,12 @@ const Footer = () => {
             >
               <FaFacebook className="text-lg" />
             </a>
+            <a
+              href="#"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-red-500 to-red-700 hover:opacity-80 transition"
+            >
+              <FaYoutube className="text-lg" />
+            </a>
           </div>
         </div>
 
