@@ -7,10 +7,12 @@ import {
   FaYoutube,
   FaFacebook,
   FaArrowUp,
+  FaGooglePlay,
+  FaApple,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import logo from "../../assets/schoolImages/logo.png"
+import logo from "../../assets/schoolImages/logo.png";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -74,7 +76,7 @@ const Footer = () => {
           <div className="lg:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center shadow-lg shadow-yellow-500/20">
-                <span className="text-xl font-bold text-[#0a0f1d]"><img src={logo} alt="School Logo" className="w-12 h-12 rounded-xl" /></span>
+                <img src={logo} alt="School Logo" className="w-12 h-12 rounded-xl" />
               </div>
               <div>
                 <h3 className="text-xl font-bold tracking-tight">
@@ -201,37 +203,58 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter / CTA */}
+          {/* App Download Section */}
           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-6 flex items-center gap-2">
               <span className="w-1 h-5 bg-gradient-to-b from-yellow-400 to-amber-600 rounded-full" />
-              Stay Updated
+              Download Our App
             </h4>
-            <p className="text-gray-300 text-sm mb-4">
-              Subscribe to receive updates, announcements, and school news.
+            <p className="text-gray-300 text-sm mb-6">
+              Stay connected with school updates, assignments, and announcements
+              right from your phone.
             </p>
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl 
-                  text-white placeholder-gray-400 focus:outline-none focus:ring-2 
-                  focus:ring-yellow-400/50 focus:border-yellow-400/50 transition-all 
-                  text-sm"
-              />
-              <button
-                type="submit"
-                className="w-full py-3 px-4 bg-gradient-to-r from-yellow-400 to-amber-500 
-                  text-[#0a0f1d] font-semibold rounded-xl hover:from-yellow-300 
-                  hover:to-amber-400 transform hover:-translate-y-0.5 transition-all 
-                  duration-200 shadow-lg shadow-yellow-500/25 text-sm"
+
+            {/* App Store Badges */}
+            <div className="space-y-3">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.friensys.shanti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 w-full px-4 py-3 bg-white/5 
+                  border border-white/10 rounded-xl hover:bg-white/10 
+                  hover:border-yellow-400/50 transition-all duration-200"
               >
-                Subscribe
-              </button>
-            </form>
+                <FaGooglePlay className="text-3xl text-white group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">Get it on</p>
+                  <p className="text-sm font-semibold text-white">Google Play</p>
+                </div>
+              </a>
+
+              {/* Apple App Store Badge (disabled/placeholder - uncomment when iOS app is live) */}
+              {/* <a
+                href="#"
+                className="group flex items-center gap-3 w-full px-4 py-3 bg-white/5 
+                  border border-white/10 rounded-xl opacity-60 cursor-not-allowed"
+                aria-disabled="true"
+              >
+                <FaApple className="text-3xl text-white" />
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">Download on the</p>
+                  <p className="text-sm font-semibold text-white">App Store</p>
+                </div>
+              </a> */}
+            </div>
+
+            {/* QR Code Hint */}
+            {/* <div className="mt-6 pt-4 border-t border-white/10">
+              <p className="text-xs text-gray-400 text-center">
+                📱 Scan QR code on our website to download instantly
+              </p>
+            </div> */}
 
             {/* Privacy Policy Link */}
-            <div className="pt-4 mt-4 border-t border-white/10">
+            <div className="pt-4 mt-2 border-t border-white/10">
               <Link
                 to="/privacy-policy"
                 className="text-xs text-gray-400 hover:text-yellow-400 
